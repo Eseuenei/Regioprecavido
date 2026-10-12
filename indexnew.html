@@ -1,0 +1,3100 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>¿SE VA A HACER? · Centro de Mando Regio | I'm Unusual</title>
+  <meta name="description" content="Sistema táctico de precisión para logística de asados y directorio de proveedores autorizados en Monterrey. Estética Quiet Luxury." />
+  <meta property="og:title" content="¿SE VA A HACER? · Centro de Mando Regio | I'm Unusual" />
+  <meta property="og:description" content="Sistema táctico de precisión para logística de asados y directorio de proveedores autorizados en Monterrey. Estética Quiet Luxury." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"Geist Mono"', 'monospace']
+          },
+          colors: {
+            tactical: {
+              black: '#06080C',
+              surface: '#0B0F17',
+              card: '#111724',
+              cardHighlight: '#161E30',
+              border: '#1D273D',
+              borderLight: '#2D3C5E',
+              amber: '#FFB800',
+              amberGlow: '#FF9500',
+              green: '#10B981',
+              greenDark: '#064E3B',
+              red: '#EF4444'
+            }
+          },
+          boxShadow: {
+            'glow-amber': '0 0 25px -5px rgba(255, 184, 0, 0.28)',
+            'glow-amber-lg': '0 0 40px -10px rgba(255, 184, 0, 0.35)',
+            'glow-card': '0 0 30px -10px rgba(0, 0, 0, 0.8)',
+            'glow-green': '0 0 20px -5px rgba(16, 185, 129, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #06080C;
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+    .mono { font-family: '"Geist Mono"', monospace; font-variant-numeric: tabular-nums; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #06080C; }
+    ::-webkit-scrollbar-thumb { background: #1D273D; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FFB800; }
+    
+    .tactical-grid {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+
+    .amber-gradient-border {
+      position: relative;
+    }
+    .amber-gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 184, 0, 0.45), transparent 60%, rgba(255, 184, 0, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="tactical-grid min-h-screen pb-44 text-slate-100 antialiased selection:bg-amber-500 selection:text-black relative">
+
+  <!-- ========================================== -->
+  <!-- RESPLANDOR AMBIENTAL & CURVAS TOPOGRÁFICAS -->
+  <!-- ========================================== -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Halo de calor superior de brasa -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[380px] bg-gradient-to-b from-amber-500/[0.08] via-amber-600/[0.02] to-transparent blur-3xl"></div>
+    <div class="absolute top-[35%] -right-40 w-[420px] h-[420px] bg-amber-500/[0.03] rounded-full blur-3xl"></div>
+    
+    <!-- Curvas de nivel topográficas inspiradas en la Sierra Madre / Cerro de la Silla -->
+    <svg class="absolute inset-0 w-full h-full text-amber-500/[0.045] pointer-events-none select-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 1600">
+      <path d="M -80 180 C 140 220, 280 340, 220 560 C 160 780, 310 940, -80 1120" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M -80 260 C 170 300, 320 440, 250 670 C 180 900, 350 1060, -80 1240" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M -80 340 C 200 390, 360 540, 280 780 C 200 1020, 390 1180, -80 1360" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M 1280 140 C 1040 200, 880 380, 960 620 C 1040 860, 890 1040, 1280 1200" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M 1280 220 C 1000 290, 830 490, 920 730 C 1010 970, 840 1150, 1280 1310" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <path d="M 1280 310 C 960 380, 780 600, 880 840 C 980 1080, 790 1260, 1280 1420" fill="none" stroke="currentColor" stroke-width="1.8" />
+    </svg>
+
+    <!-- Silueta minimalista del Cerro de la Silla integrada en el fondo -->
+    <svg class="absolute bottom-16 right-0 w-[580px] h-[220px] text-white/[0.025] fill-current pointer-events-none select-none" viewBox="0 0 100 40">
+      <path d="M 0 35 L 20 32 L 35 15 L 48 8 L 60 22 L 68 24 L 80 12 L 92 28 L 100 35 Z" />
+    </svg>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- BARRA SUPERIOR (HEADER REGIO ACCESIBLE)    -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-tactical-black/90 border-b border-tactical-border/90 px-3.5 py-2.5 shadow-xl transition-all">
+    <div class="max-w-2xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs relative z-10">
+      
+      <!-- Ubicación e Identidad -->
+      <div class="flex items-center justify-between sm:justify-start gap-2">
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tactical-card/90 border border-tactical-border text-amber-400 font-bold text-xs shadow-sm hover:border-amber-500/40 transition-colors">
+          <span class="text-sm">⛰️</span>
+          <span class="tracking-wider">MONTERREY</span>
+          <span class="text-slate-400 font-normal">· La Ciudad de las Montañas</span>
+        </div>
+        <span class="text-slate-400 font-mono text-[11px] bg-tactical-card/50 px-2 py-0.5 rounded border border-tactical-border/50" id="live-clock">11:05:00 CST</span>
+      </div>
+
+      <!-- Radar de Clima en Vivo, Semáforo de Fuego & Sonido Táctico -->
+      <div class="flex items-center justify-between sm:justify-end gap-2">
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-tactical-card border border-tactical-border text-slate-200 shadow-sm" title="«Si no te gusta el clima de Monterrey, vuelve en 15 minutos»">
+          <span id="weather-icon" class="text-amber-400 text-sm">⛅</span>
+          <span class="font-bold mono text-amber-400" id="weather-temp">26°C</span>
+          <span class="text-[11px] text-slate-300" id="weather-desc">Agradable pa' asar</span>
+        </div>
+
+        <button onclick="toggleWeatherState()" id="fire-status-btn" title="Toca aquí para probar si llueve o hay sol" class="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 font-bold text-[11px] mono transition-all hover:scale-105 active:scale-95 shadow-glow-green">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" id="fire-dot"></span>
+          <span id="fire-status-text">🟢 LUZ VERDE PA' LA LUMBRE</span>
+        </button>
+
+        <!-- Conmutador de Sonido Táctico -->
+        <button onclick="toggleSoundFx()" id="sound-toggle-btn" title="Activar/Silenciar sonido táctico" class="p-1.5 rounded-xl bg-tactical-card border border-tactical-border hover:border-amber-400 text-slate-300 hover:text-amber-400 text-xs transition-all active:scale-95" aria-label="Audio táctico">
+          <span id="sound-icon">🔊</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO PRINCIPAL & BRANDING "¿SE VA A HACER?"-->
+  <!-- ========================================== -->
+  <div class="max-w-2xl mx-auto px-4 pt-4 pb-2 relative z-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <!-- Coordenadas Geográficas de Monterrey -->
+        <div class="text-[10px] font-mono text-amber-400/90 tracking-widest uppercase mb-1 flex items-center gap-1.5">
+          <span>——</span>
+          <span>MONTERREY · NUEVO LEÓN · 25.6866° N, 100.3161° W</span>
+          <span>——</span>
+        </div>
+
+        <!-- Título Monumental Two-Tone con Llama -->
+        <div class="flex items-baseline gap-2.5">
+          <span class="text-2xl drop-shadow-[0_0_12px_rgba(255,184,0,0.5)]">🔥</span>
+          <h1 class="text-2xl sm:text-3xl font-black tracking-tight uppercase mono flex items-baseline gap-2">
+            <span class="text-white drop-shadow-md">¿SE VA A</span>
+            <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(251,191,36,0.45)]">HACER?</span>
+          </h1>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono tracking-wider font-bold uppercase bg-amber-500/10 text-amber-400 border border-amber-500/30 shadow-sm ml-1">
+            BETA v1.0 · ULS
+          </span>
+        </div>
+
+        <!-- Subtítulo Táctico y Código de Barras Activado -->
+        <div class="flex flex-wrap items-center gap-2 mt-1">
+          <p class="text-xs text-slate-300 font-semibold tracking-wide flex items-center gap-1.5">
+            <span>— LA CALCULADORA TÁCTICA DE LA CARNITA ASADA —</span>
+          </p>
+          <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/60 border border-amber-500/30 text-[10px] font-mono text-amber-400 shadow-sm">
+            <span class="tracking-widest opacity-80">|||||||||||||||</span>
+            <span>〈 CÓDIGO REGIO ACTIVADO 〉</span>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-0.5">Arma tu presupuesto y coperacha exacta por cabeza en segundos</p>
+      </div>
+
+      <!-- Botones de Acción Táctica -->
+      <div class="flex items-center gap-2">
+        <button onclick="openMandamientosModal()" class="px-3 py-2 rounded-xl bg-tactical-card border border-tactical-border hover:border-amber-400 text-slate-200 hover:text-amber-400 transition-all text-xs font-bold flex items-center gap-1.5 shadow-sm active:scale-95">
+          <span>📜</span>
+          <span>10 Mandamientos</span>
+        </button>
+        <button onclick="reiniciarDesdeCero()" class="px-2.5 py-2 rounded-xl bg-tactical-card border border-tactical-border hover:border-red-400 text-slate-300 hover:text-red-400 transition-all text-xs font-bold flex items-center gap-1 active:scale-95 shadow-sm" title="Empezar cálculo desde cero">
+          <span>🔄</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Frase célebre de clima de Monterrey con diseño refinado -->
+    <div class="mt-2.5 text-[11px] text-slate-300 italic flex items-center gap-2 bg-tactical-card/70 backdrop-blur-md px-3.5 py-2 rounded-xl border border-tactical-border/80 shadow-sm">
+      <span class="text-sm">💡</span>
+      <span>«Si no te gusta el clima hoy en Monterrey, vuelve mañana.» — Hoy el cielo se deja, aprovechen la lumbre.</span>
+    </div>
+
+    <!-- PESTAÑAS PRINCIPALES CON ESTÉTICA TÁCTICA DE ALTO IMPACTO -->
+    <div class="mt-3.5 p-1 rounded-2xl bg-tactical-surface/90 backdrop-blur-md border border-tactical-border grid grid-cols-3 gap-1 shadow-md">
+      <button onclick="switchTab('carnita')" id="tab-btn-carnita" class="py-2.5 px-2 rounded-xl font-black text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 bg-amber-500 text-black shadow-lg shadow-amber-500/25 active:scale-95">
+        <span>🥩</span>
+        <span>1. La Carnita</span>
+      </button>
+      <button onclick="switchTab('fuego')" id="tab-btn-fuego" class="py-2.5 px-2 rounded-xl font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 text-slate-400 hover:text-white hover:bg-tactical-card active:scale-95">
+        <span>🔥</span>
+        <span>2. Al Fuego</span>
+      </button>
+      <button onclick="switchTab('radar')" id="tab-btn-radar" class="py-2.5 px-2 rounded-xl font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 text-slate-400 hover:text-white hover:bg-tactical-card active:scale-95">
+        <span>📍</span>
+        <span>3. Proveedores</span>
+      </button>
+    </div>
+
+    <!-- BANNER GUÍA DE PROGRESO EN 5 PASOS -->
+    <div class="mt-3 p-3 rounded-2xl bg-tactical-card/90 border border-tactical-border flex items-center justify-between text-xs shadow-sm">
+      <div class="flex items-center gap-2">
+        <span class="text-amber-400 font-bold flex items-center gap-1">
+          <span>⚡</span> GUÍA:
+        </span>
+        <span class="text-slate-300">Ve completando los pasos del 1 al 5. Se marcarán en verde <strong class="text-emerald-400 font-mono">✓</strong> en automático.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB CONTENT CONTAINER -->
+  <main class="max-w-2xl mx-auto px-4 mt-2 relative z-10">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: LA CARNITA (CALCULADORA PASO A PASO)-->
+    <!-- ========================================== -->
+    <section id="tab-carnita" class="space-y-5">
+      
+      <!-- ========================================== -->
+      <!-- PASO 1: CONTINGENTE (¿CUÁNTOS SE JUNTAN?)  -->
+      <!-- ========================================== -->
+      <div class="rounded-3xl bg-tactical-surface/90 backdrop-blur-md border-2 border-tactical-border hover:border-tactical-borderLight p-4 sm:p-5 shadow-xl transition-all" id="box-step-1">
+        <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-tactical-border/70">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-xl font-black flex items-center justify-center text-sm mono shadow-md transition-all" id="badge-step-1">1</span>
+            <div>
+              <h2 class="text-sm font-black uppercase text-white tracking-wide">PASO 1 · ¿CUÁNTOS VAN AL ASADOR?</h2>
+              <p class="text-[11px] text-slate-400">Pon cuántos compadres, comadres y huercos van a asistir</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-sm font-black mono text-amber-400"><span id="total-pax">1</span> persona</div>
+            <div class="text-[10px] text-slate-400 mono" id="pax-breakdown">(1 adulto · 0 huercos)</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+          <!-- Compadres -->
+          <div class="rounded-2xl bg-tactical-card/90 border border-tactical-border hover:border-amber-500/30 p-3 text-center transition-all">
+            <div class="text-xs font-black text-white flex items-center justify-center gap-1">
+              <span>🤠</span> COMPADRES
+            </div>
+            <div class="text-[10px] text-amber-400 mono mt-0.5">450g carne</div>
+            <div class="flex items-center justify-between mt-3 px-1">
+              <button onclick="adjustPax('compadres', -1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">-</button>
+              <span class="text-xl font-black mono text-white" id="count-compadres">1</span>
+              <button onclick="adjustPax('compadres', 1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">+</button>
+            </div>
+          </div>
+
+          <!-- Comadres -->
+          <div class="rounded-2xl bg-tactical-card/90 border border-tactical-border hover:border-amber-500/30 p-3 text-center transition-all">
+            <div class="text-xs font-black text-white flex items-center justify-center gap-1">
+              <span>💃</span> COMADRES
+            </div>
+            <div class="text-[10px] text-amber-400 mono mt-0.5">350g carne</div>
+            <div class="flex items-center justify-between mt-3 px-1">
+              <button onclick="adjustPax('comadres', -1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">-</button>
+              <span class="text-xl font-black mono text-white" id="count-comadres">0</span>
+              <button onclick="adjustPax('comadres', 1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">+</button>
+            </div>
+          </div>
+
+          <!-- Huercos -->
+          <div class="rounded-2xl bg-tactical-card/90 border border-tactical-border hover:border-amber-500/30 p-3 text-center transition-all">
+            <div class="text-xs font-black text-white flex items-center justify-center gap-1">
+              <span>🧢</span> HUERCOS
+            </div>
+            <div class="text-[10px] text-amber-400 mono mt-0.5">150g carne</div>
+            <div class="flex items-center justify-between mt-3 px-1">
+              <button onclick="adjustPax('huercos', -1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">-</button>
+              <span class="text-xl font-black mono text-white" id="count-huercos">0</span>
+              <button onclick="adjustPax('huercos', 1)" class="w-8 h-8 rounded-xl bg-tactical-surface border border-tactical-border text-slate-200 font-bold hover:border-amber-400 active:scale-90 flex items-center justify-center text-lg transition-transform">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 text-[11px] text-slate-400 text-center italic">
+          💡 Puedes presionar el botón <strong>[+]</strong> para sumar quiénes van. Al sumar comensales, los kilos se calculan solos.
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- PASO 2: COTIZACIÓN (¿DÓNDE VAS A COMPRAR?) -->
+      <!-- ========================================== -->
+      <div class="rounded-3xl bg-tactical-surface/90 backdrop-blur-md border-2 border-tactical-border hover:border-tactical-borderLight p-4 sm:p-5 shadow-xl transition-all" id="box-step-2">
+        <div class="flex items-center justify-between mb-3 pb-2 border-b border-tactical-border/70">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-xl font-black flex items-center justify-center text-sm mono shadow-md transition-all" id="badge-step-2">2</span>
+            <div>
+              <h2 class="text-sm font-black uppercase text-white tracking-wide">PASO 2 · ¿DÓNDE VAS A COMPRAR LA CARNE?</h2>
+              <p class="text-[11px] text-slate-400">Selecciona el tipo de tienda para cargar los precios de referencia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner de Transparencia de Precios -->
+        <div class="mb-3 px-3.5 py-2 rounded-xl bg-tactical-card/90 border border-tactical-border text-[11px] text-slate-300 flex items-center justify-between">
+          <span class="flex items-center gap-1.5">
+            <span>📅</span>
+            <span><strong>Referencia de Precios ZMM:</strong> Octubre 2026</span>
+          </span>
+          <span class="text-slate-400 italic">Promedio de mostrador</span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 sm:gap-3">
+          <button onclick="setMarketTier('abastos')" id="tier-abastos" class="p-3 rounded-2xl border text-left transition-all border-tactical-border bg-tactical-card hover:border-slate-500 active:scale-95">
+            <div class="text-[10px] uppercase font-bold text-slate-400 mono flex items-center gap-1">
+              <span>🏬</span> BODEGA MAYOREO
+            </div>
+            <div class="font-bold text-xs sm:text-sm text-white mt-1">Abastos Guadalupe</div>
+            <div class="text-[11px] text-emerald-400 mono mt-1 font-semibold">Ahorro Máximo</div>
+          </button>
+
+          <button onclick="setMarketTier('heb')" id="tier-heb" class="p-3 rounded-2xl border text-left transition-all border-amber-500 bg-amber-500/10 shadow-glow-amber active:scale-95">
+            <div class="text-[10px] uppercase font-bold text-amber-400 mono flex items-center gap-1">
+              <span>🛒</span> SUPERMERCADOS
+            </div>
+            <div class="font-bold text-xs sm:text-sm text-white mt-1">H-E-B / Soriana</div>
+            <div class="text-[11px] text-amber-300 mono mt-1 font-semibold">Estándar Supreme ✓</div>
+          </button>
+
+          <button onclick="setMarketTier('ramos')" id="tier-ramos" class="p-3 rounded-2xl border text-left transition-all border-tactical-border bg-tactical-card hover:border-slate-500 active:scale-95">
+            <div class="text-[10px] uppercase font-bold text-slate-400 mono flex items-center gap-1">
+              <span>👑</span> CALIDAD PRIME
+            </div>
+            <div class="font-bold text-xs sm:text-sm text-white mt-1">Ramos & San Juan</div>
+            <div class="text-[11px] text-amber-400 mono mt-1 font-semibold">Oro Regio</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- PASO 3: ESTILO DE CARNITA & HAMBRE         -->
+      <!-- ========================================== -->
+      <div class="rounded-3xl bg-tactical-surface/90 backdrop-blur-md border-2 border-tactical-border hover:border-tactical-borderLight p-4 sm:p-5 shadow-xl space-y-4 transition-all" id="box-step-3">
+        <div class="flex items-center justify-between pb-2 border-b border-tactical-border/70">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-xl font-black flex items-center justify-center text-sm mono shadow-md transition-all" id="badge-step-3">3</span>
+            <div>
+              <h2 class="text-sm font-black uppercase text-white tracking-wide">PASO 3 · ESTILO DE CARNITA & HAMBRE</h2>
+              <p class="text-[11px] text-slate-400">Escoge el estilo del evento y ajusta el nivel de hambre</p>
+            </div>
+          </div>
+          <span class="text-xs text-amber-400 font-bold mono bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30" id="current-preset-name">Pa' los Tacos (Banqueta)</span>
+        </div>
+
+        <!-- 4 Presets de Estilo -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="applyPreset('banqueta')" id="preset-banqueta" class="p-3 sm:p-3.5 rounded-2xl border border-amber-500 bg-amber-500/10 text-left transition-all shadow-glow-amber active:scale-95">
+            <div class="text-xs sm:text-sm font-black text-amber-300">1) Pa' los Tacos (Banqueta) ✓</div>
+            <p class="text-[11px] text-slate-300 mt-1 leading-snug">Costilla cargada + Flecha crujiente + Salchicha.</p>
+          </button>
+
+          <button onclick="applyPreset('clasica')" id="preset-clasica" class="p-3 sm:p-3.5 rounded-2xl border border-tactical-border bg-tactical-card text-left hover:border-slate-500 transition-all active:scale-95">
+            <div class="text-xs sm:text-sm font-black text-white">2) La Clásica Regia</div>
+            <p class="text-[11px] text-slate-400 mt-1 leading-snug">Arrachera marinada suave + Aguja Norteña.</p>
+          </button>
+
+          <button onclick="applyPreset('patron')" id="preset-patron" class="p-3 sm:p-3.5 rounded-2xl border border-tactical-border bg-tactical-card text-left hover:border-slate-500 transition-all active:scale-95">
+            <div class="text-xs sm:text-sm font-black text-white">3) Modo Patrón (Pa' Lucirse)</div>
+            <p class="text-[11px] text-slate-400 mt-1 leading-snug">Rib Eye 2" Prime + New York + Tuétanos.</p>
+          </button>
+
+          <button onclick="applyPreset('botanera')" id="preset-botanera" class="p-3 sm:p-3.5 rounded-2xl border border-tactical-border bg-tactical-card text-left hover:border-slate-500 transition-all active:scale-95">
+            <div class="text-xs sm:text-sm font-black text-white">4) La Botanera con Picaña</div>
+            <p class="text-[11px] text-slate-400 mt-1 leading-snug">Chicharrón + Picaña en espadas + Empalmes.</p>
+          </button>
+        </div>
+
+        <!-- MEDIDOR DE HAMBRE (SEPARADO Y DESTACADO) -->
+        <div class="p-4 rounded-2xl bg-tactical-cardHighlight/90 border border-tactical-borderLight shadow-sm">
+          <div class="flex items-center justify-between text-xs mb-2">
+            <span class="text-slate-200 font-bold flex items-center gap-1.5">
+              <span>🌡️</span> Medidor de Apetito:
+            </span>
+            <span class="mono font-black text-amber-400 text-sm bg-black/50 px-2.5 py-0.5 rounded border border-amber-500/30" id="hunger-label">Normal NL (x1.0)</span>
+          </div>
+          <input type="range" id="hunger-slider" min="0" max="4" step="1" value="2" oninput="updateHunger(this.value)" class="w-full h-2.5 bg-tactical-border rounded-lg appearance-none cursor-pointer accent-amber-500 shadow-sm">
+          <div class="flex justify-between text-[11px] text-slate-400 mono mt-2">
+            <span>Pique (0.6x)</span>
+            <span>Tranqui (0.8x)</span>
+            <span class="text-amber-400 font-bold">Normal (1.0x)</span>
+            <span>Tragones (1.35x)</span>
+            <span>Voraz (1.65x)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- PASO 4: CORTES & VITUALLAS (EDITABLE)      -->
+      <!-- ========================================== -->
+      <div class="rounded-3xl bg-tactical-surface/90 backdrop-blur-md border-2 border-tactical-border hover:border-tactical-borderLight p-4 sm:p-5 shadow-xl space-y-4 transition-all" id="box-step-4">
+        <div class="flex items-center justify-between pb-2 border-b border-tactical-border/70">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-xl font-black flex items-center justify-center text-sm mono shadow-md transition-all" id="badge-step-4">4</span>
+            <div>
+              <h2 class="text-sm font-black uppercase text-white tracking-wide">PASO 4 · CORTES, BOTANAS & BEBIDAS</h2>
+              <p class="text-[11px] text-slate-400">Total en Carne: <span class="text-amber-400 font-bold mono bg-amber-500/10 px-2 py-0.5 rounded" id="meat-total-kg">0.00 kg</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner explicativo interactivo -->
+        <div class="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 flex items-start gap-2 shadow-sm">
+          <span class="text-base">💡</span>
+          <span><strong>¡Todo se puede editar a tu gusto!</strong> Ya calculamos los kilos exactos según tus comensales, pero puedes usar los botones <strong>[-]</strong> y <strong>[+]</strong> o sumar más cortes abajo.</span>
+        </div>
+
+        <!-- Lista de Cortes -->
+        <div class="space-y-2">
+          <div class="text-xs font-bold text-slate-300 uppercase tracking-wider mono flex items-center gap-1.5">
+            <span>🥩</span> Cortes en la Parrilla:
+          </div>
+          <div id="meat-list" class="space-y-2.5"></div>
+        </div>
+
+        <!-- Chips "+ Échale otro corte" -->
+        <div class="pt-2">
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mono mb-2">
+            + ¿QUIERES SUMAR OTRO CORTE? PÍCALE AQUÍ:
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="meat-chips-container"></div>
+        </div>
+
+        <!-- Botanas y Entradas (Filtradas inteligentemente por tienda) -->
+        <div class="pt-3 border-t border-tactical-border">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <span class="text-xs font-bold text-slate-300 uppercase tracking-wider mono flex items-center gap-1">
+                <span>🧀</span> Botanas & Entradas:
+              </span>
+              <span class="text-[10px] text-slate-400 ml-1.5" id="botana-store-note">(Mostrando opciones según tu tienda)</span>
+            </div>
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20" id="botanas-subtotal">$0 MXN</span>
+          </div>
+          <div id="botanas-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+        </div>
+
+        <!-- Carbón e Hidratación con Switch de Cheves -->
+        <div class="pt-3 border-t border-tactical-border space-y-3">
+          
+          <!-- Carbón con Ratio Táctico y Tip Regio -->
+          <div class="rounded-2xl bg-tactical-card/90 border border-tactical-border p-4 space-y-2.5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-base">🪵</span>
+                <div>
+                  <div class="text-xs font-bold text-slate-200 mono">INSUMOS DE BRASA (CARBÓN)</div>
+                  <div class="text-[11px] text-amber-400 font-mono font-bold" id="carbon-bags">1 bolsa de mezquite (3 kg)</div>
+                </div>
+              </div>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded" id="carbon-cost">$85 MXN</span>
+            </div>
+
+            <!-- Ratio Táctico de Combustión -->
+            <div class="p-2.5 rounded-xl bg-tactical-surface/80 border border-tactical-border/70 text-[11px] space-y-1">
+              <div class="text-slate-300">
+                <strong class="text-amber-400 mono">Ratio exacto:</strong> 1.5 bolsas (3 kg) por cada 3 kg de carne para garantizar brasa constante y calor parejo.
+              </div>
+              <div class="text-slate-400 italic flex items-start gap-1 pt-1 border-t border-tactical-border/40">
+                <span>💡</span>
+                <span><strong>Tip Regio:</strong> Si presientes que se va a enganchar la raza con plática y noche larga, sé precavido y llévate una bolsa extra de carbón en la cajuela.</span>
+              </div>
+            </div>
+
+            <!-- Ajuste manual -->
+            <div class="flex items-center justify-between pt-1 text-xs">
+              <span class="text-slate-400 text-[11px]">Ajustar bolsas manual:</span>
+              <div class="flex items-center gap-1.5">
+                <button onclick="adjustCarbon(-1)" class="w-7 h-7 rounded-lg bg-tactical-surface border border-tactical-border text-white text-xs font-bold hover:border-amber-400 active:scale-90 transition-transform">-</button>
+                <button onclick="adjustCarbon(1)" class="w-7 h-7 rounded-lg bg-tactical-surface border border-tactical-border text-white text-xs font-bold hover:border-amber-400 active:scale-90 transition-transform">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- MÓDULO PARA LA SED: CHEVES & REFRESCOS INDEPENDIENTES -->
+          <div class="rounded-2xl bg-tactical-card/90 border border-tactical-border p-4 space-y-3.5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs font-bold text-slate-200 mono">🍺 PARA LA SED (HIDRATACIÓN REGIA)</span>
+                <p class="text-[11px] text-slate-400 mt-0.5">Control independiente de cerveza y refrescos para la raza</p>
+              </div>
+              <span class="text-sm font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded" id="drinks-cost">$168 MXN</span>
+            </div>
+
+            <!-- Selector: ¿Cheves en la cuenta común o cada quien lo suyo? -->
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="setDrinksMode('shared')" id="drinks-btn-shared" class="p-3 rounded-xl border text-left transition-all border-tactical-border bg-tactical-surface text-xs hover:border-slate-500 active:scale-95">
+                <div class="font-bold text-slate-300 flex items-center gap-1.5">
+                  <span>🍻</span> <span>Sí, Cheves en la Cuenta</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mono mt-0.5">Entran a la coperacha común</div>
+              </button>
+
+              <button onclick="setDrinksMode('byob')" id="drinks-btn-byob" class="p-3 rounded-xl border text-left transition-all border-amber-500 bg-amber-500/10 text-xs shadow-sm active:scale-95">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>🧊</span> <span>Cada quien sus frías ✓</span>
+                </div>
+                <div class="text-[10px] text-amber-300 mono mt-0.5">$0 cheve en la cuenta (BYOB)</div>
+              </button>
+            </div>
+
+            <!-- Fila 1: Control de Cerveza por Sixes -->
+            <div id="cheves-control-row" class="p-3 rounded-xl bg-tactical-surface/80 border border-tactical-border flex items-center justify-between gap-3 opacity-40 transition-opacity">
+              <div>
+                <div class="font-bold text-xs text-white flex items-center gap-1.5">
+                  <span>🍺</span>
+                  <span>Cerveza (Carta Blanca / Tecate Light)</span>
+                </div>
+                <div class="text-[10px] text-slate-400 mono mt-0.5" id="cheves-detail-text">1 Six (6 latas) · $168 MXN ($28/lata)</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="adjustSixes(-1)" class="px-2.5 py-1.5 rounded-lg bg-tactical-card border border-tactical-border text-white text-xs font-mono hover:border-amber-400 active:scale-90 font-bold transition-transform">- 1 Six</button>
+                <span class="font-mono text-xs font-bold text-amber-400 min-w-[2.5rem] text-center" id="sixes-count-display">1 Six</span>
+                <button onclick="adjustSixes(1)" class="px-2.5 py-1.5 rounded-lg bg-tactical-card border border-tactical-border text-white text-xs font-mono hover:border-amber-400 active:scale-90 font-bold transition-transform">+ 1 Six</button>
+              </div>
+            </div>
+
+            <!-- Fila 2: Control Independiente de Refrescos (Joyas de Manzana / Cocas) -->
+            <div class="p-3 rounded-xl bg-tactical-surface/80 border border-tactical-border flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <input type="checkbox" id="refrescos-active-checkbox" onchange="toggleRefrescosActive()" class="w-4 h-4 rounded bg-tactical-surface border-tactical-border text-amber-500 cursor-pointer">
+                <div>
+                  <div class="font-bold text-xs text-white flex items-center gap-1.5">
+                    <span>🥤</span>
+                    <span>Refrescos (Joyas de Manzana / Cocas)</span>
+                  </div>
+                  <div class="text-[10px] text-slate-400 mono mt-0.5" id="refrescos-detail-text">2 piezas · $40 MXN ($20/pza)</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button onclick="adjustRefrescos(-1)" class="w-7 h-7 rounded-lg bg-tactical-card border border-tactical-border text-white text-xs font-bold hover:border-amber-400 active:scale-90 transition-transform">-</button>
+                <span class="font-mono text-xs font-bold text-white min-w-[2rem] text-center" id="refrescos-count-display">2</span>
+                <button onclick="adjustRefrescos(1)" class="w-7 h-7 rounded-lg bg-tactical-card border border-tactical-border text-white text-xs font-bold hover:border-amber-400 active:scale-90 transition-transform">+</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- PASO 5: LA CUENTA FINAL & COPERACHA        -->
+      <!-- ========================================== -->
+      <div class="rounded-3xl bg-gradient-to-b from-tactical-cardHighlight/95 via-tactical-surface to-tactical-black border-2 border-amber-500/80 p-5 sm:p-6 shadow-glow-amber-lg text-center relative overflow-hidden" id="box-step-5">
+        <div class="absolute top-0 right-0 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <span class="w-7 h-7 rounded-xl font-black flex items-center justify-center text-sm mono shadow-md transition-all" id="badge-step-5">5</span>
+          <h2 class="text-sm sm:text-base font-black uppercase text-amber-400 tracking-wider mono flex items-center gap-1.5">
+            <span>⚡</span> ¡CUENTA LISTA! COPERACHA POR CABEZA
+          </h2>
+        </div>
+        <p class="text-xs text-slate-300">Aquí está el resultado final de tu carnita asada:</p>
+
+        <!-- Big Display Box -->
+        <div class="my-4 p-4 rounded-2xl bg-black/80 border border-amber-500/40 inline-block w-full max-w-md shadow-inner">
+          <div class="text-xs font-mono text-slate-400 uppercase font-semibold">PRESUPUESTO TOTAL ESTIMADO</div>
+          <div class="text-3xl sm:text-4xl font-black mono text-white mt-0.5 tracking-tight" id="final-ticket-total">$0 MXN</div>
+          
+          <div class="mt-3 pt-3 border-t border-tactical-border flex items-center justify-center gap-2">
+            <span class="text-base sm:text-lg font-black text-amber-300 uppercase tracking-wide">👉 TOCA DE A:</span>
+            <span class="text-2xl sm:text-3xl font-black mono text-amber-400" id="final-ticket-por-cabeza">$0</span>
+            <span class="text-xs font-extrabold text-amber-300 uppercase">POR CABEZA</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mono mt-1" id="final-ticket-pax">Calculado para 0 personas</div>
+        </div>
+
+        <!-- Botones de Acción Claros y Auto-Explicativos -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mt-2">
+          <button onclick="copiarRecadoWhatsApp()" class="w-full py-3 px-4 rounded-2xl bg-tactical-card border-2 border-amber-500 hover:bg-amber-500/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 active:scale-95 shadow-md">
+            <span class="text-base">💬</span>
+            <span>Copiar Cuenta para Enviar a WhatsApp</span>
+          </button>
+
+          <button onclick="openStoriesModal()" class="w-full py-3 px-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black font-black text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-glow-amber active:scale-95">
+            <span class="text-base">📸</span>
+            <span>Ver Tarjeta Stories (9:16)</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: AL FUEGO (COMBUSTIÓN & TEMPORIZADOR) -->
+    <!-- ========================================== -->
+    <section id="tab-fuego" class="hidden space-y-4">
+      
+      <div class="rounded-3xl bg-tactical-surface/90 backdrop-blur-md border-2 border-tactical-border p-4 sm:p-5 shadow-xl">
+        <div class="text-center max-w-md mx-auto mb-4">
+          <span class="text-[10px] text-amber-400 mono font-bold uppercase tracking-widest bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+            ESQUEMAS DE COMBUSTIÓN REGIA
+          </span>
+          <h2 class="text-base sm:text-lg font-black text-white uppercase mt-2 tracking-tight">
+            «¿SE VA A HACER O NO SE VA A HACER?»
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Cuatro maneras de prender el carbón en Nuevo León. Desde la salida de emergencia hasta la brasa blanca perfecta.
+          </p>
+        </div>
+
+        <!-- 4 Grid Selector -->
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <button onclick="selectFireLevel(1)" id="fire-card-1" class="p-3 rounded-2xl border border-tactical-border bg-tactical-card text-left transition-all hover:border-slate-500 active:scale-95">
+            <div class="text-[10px] font-mono font-bold text-amber-400">01 · PRIMERIZO</div>
+            <div class="text-xs font-bold text-white mt-0.5">Servilleta y Aceite</div>
+            <div class="text-[10px] text-slate-400 mono mt-1">24 min · Dificultad 1/5</div>
+          </button>
+
+          <button onclick="selectFireLevel(2)" id="fire-card-2" class="p-3 rounded-2xl border border-amber-500 bg-amber-500/10 text-left transition-all shadow-glow-amber active:scale-95">
+            <div class="text-xs font-bold text-amber-300">02 · DOMINGUERO ✓</div>
+            <div class="text-xs font-bold text-white mt-0.5">Chimenea Metálica</div>
+            <div class="text-[10px] text-amber-300/80 mono mt-1">15 min · Efecto Venturi</div>
+          </button>
+
+          <button onclick="selectFireLevel(3)" id="fire-card-3" class="p-3 rounded-2xl border border-tactical-border bg-tactical-card text-left transition-all hover:border-slate-500 active:scale-95">
+            <div class="text-[10px] font-mono font-bold text-amber-400">03 · EL TÍO REGIO</div>
+            <div class="text-xs font-bold text-white mt-0.5">Corona de Caguama</div>
+            <div class="text-[10px] text-slate-400 mono mt-1">18 min · Periódico El Norte</div>
+          </button>
+
+          <button onclick="selectFireLevel(4)" id="fire-card-4" class="p-3 rounded-2xl border border-tactical-border bg-tactical-card text-left transition-all hover:border-slate-500 active:scale-95">
+            <div class="text-[10px] font-mono font-bold text-amber-400">04 · MAESTRO HUASTECA</div>
+            <div class="text-xs font-bold text-white mt-0.5">Ocote y Pulmón</div>
+            <div class="text-[10px] text-slate-400 mono mt-1">12 min · Dificultad 5/5</div>
+          </button>
+        </div>
+
+        <!-- Detail Box & Interactive Timer -->
+        <div class="rounded-2xl bg-tactical-card border border-tactical-border p-4 shadow-sm" id="fire-detail-box"></div>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: PROVEEDORES & RADAR DE MONTERREY   -->
+    <!-- ========================================== -->
+    <section id="tab-radar" class="hidden space-y-3">
+      
+      <div class="flex items-center justify-between px-1">
+        <div>
+          <h2 class="text-sm font-black uppercase text-white mono">DIRECTORIO DE CARNICERÍAS Y ABASTOS (ZMM)</h2>
+          <p class="text-[11px] text-slate-400">Las ubicaciones más reconocidas y de prestigio en Monterrey y su área metropolitana.</p>
+        </div>
+        <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30 font-bold">
+          4 Nodos
+        </span>
+      </div>
+
+      <!-- Carnes Finas San Juan -->
+      <div class="rounded-2xl bg-tactical-surface/90 border border-tactical-border p-4 hover:border-amber-500/40 transition-all shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-white">Carnes Finas San Juan</h3>
+              <span class="text-xs text-amber-400 font-bold">⭐ 4.9 / 5</span>
+            </div>
+            <p class="text-xs text-amber-400/90 font-medium mt-0.5">Especialidad en Arrachera Marinada & Cortes Prime</p>
+          </div>
+          <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">$$$$</span>
+        </div>
+        <p class="text-xs text-slate-300 mt-2 bg-tactical-card p-2.5 rounded-lg border border-tactical-border/60">
+          <strong class="text-amber-400">Evaluación:</strong> El estándar de oro en NL. Precios de gama alta con garantía absoluta de suavidad y marmoleo perfecto.
+        </p>
+      </div>
+
+      <!-- Carnicería Ramos -->
+      <div class="rounded-2xl bg-tactical-surface/90 border border-tactical-border p-4 hover:border-amber-500/40 transition-all shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-white">Carnicería Ramos</h3>
+              <span class="text-xs text-amber-400 font-bold">⭐ 4.8 / 5</span>
+            </div>
+            <p class="text-xs text-amber-400/90 font-medium mt-0.5">Especialidad en Costilla Cargada y Chicharrón de Cachete</p>
+          </div>
+          <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950 px-2 py-0.5 rounded border border-amber-500/30">$$</span>
+        </div>
+        <p class="text-xs text-slate-300 mt-2 bg-tactical-card p-2.5 rounded-lg border border-tactical-border/60">
+          <strong class="text-amber-400">Evaluación:</strong> La mejor relación calidad-precio. El Chicharrón de la Ramos recién salido de la paila es requisito civil.
+        </p>
+      </div>
+
+      <!-- Supermercados H-E-B -->
+      <div class="rounded-2xl bg-tactical-surface/90 border border-tactical-border p-4 hover:border-amber-500/40 transition-all shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-white">Supermercados H-E-B (Carnicería)</h3>
+              <span class="text-xs text-amber-400 font-bold">⭐ 4.6 / 5</span>
+            </div>
+            <p class="text-xs text-amber-400/90 font-medium mt-0.5">Salchichas texanas y cortes al vacío Cryovac Supreme</p>
+          </div>
+          <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950 px-2 py-0.5 rounded border border-amber-500/30">$$$</span>
+        </div>
+        <p class="text-xs text-slate-300 mt-2 bg-tactical-card p-2.5 rounded-lg border border-tactical-border/60">
+          <strong class="text-amber-400">Evaluación:</strong> Consistencia perfecta y cadena de frío impecable para surtir todo en una sola vuelta.
+        </p>
+      </div>
+
+      <!-- Central de Abastos -->
+      <div class="rounded-2xl bg-tactical-surface/90 border border-tactical-border p-4 hover:border-amber-500/40 transition-all shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-white">Central de Abastos Guadalupe & San Nicolás</h3>
+              <span class="text-xs text-amber-400 font-bold">⭐ 4.7 / 5</span>
+            </div>
+            <p class="text-xs text-amber-400/90 font-medium mt-0.5">Bodegas de Mayoreo, Cajas de Carne & Costales de Carbón</p>
+          </div>
+          <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">$</span>
+        </div>
+        <p class="text-xs text-slate-300 mt-2 bg-tactical-card p-2.5 rounded-lg border border-tactical-border/60">
+          <strong class="text-amber-400">Evaluación:</strong> Precio directo de bodega de introductor. Máximo ahorro para palapas, quintas y eventos grandes.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- HUD INFERIOR FLOTANTE (STICKY BAR: TOTAL & POR CABEZA)   -->
+  <!-- ======================================================== -->
+  <aside class="fixed bottom-0 inset-x-0 z-40 bg-tactical-black/95 backdrop-blur-2xl border-t-2 border-tactical-border/90 px-4 py-3 shadow-[0_-10px_35px_rgba(0,0,0,0.85)]">
+    <div class="max-w-2xl mx-auto flex items-center justify-between gap-3">
+      
+      <!-- Metrics Info -->
+      <div class="flex-1">
+        <div class="flex items-baseline gap-2">
+          <span class="text-2xl sm:text-3xl font-black mono text-white tracking-tight" id="hud-total">$0</span>
+          <span class="text-[10px] mono text-slate-400 font-semibold">MXN TOTAL</span>
+        </div>
+        
+        <div class="flex items-center gap-1.5 mt-0.5">
+          <span class="text-xs text-amber-400 font-bold mono">
+            👉 <span id="hud-por-cabeza">$0</span>
+          </span>
+          <span class="text-xs font-black text-amber-300 uppercase tracking-wider">POR CABEZA</span>
+          <span class="text-[10px] text-slate-400 mono hidden sm:inline" id="hud-pax-count">(0 personas)</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2">
+        <button onclick="copiarRecadoWhatsApp()" title="Copiar cuenta para WhatsApp" class="px-3 py-2.5 rounded-xl bg-tactical-card border border-tactical-border hover:border-amber-400 text-slate-200 text-xs font-bold transition-all flex items-center gap-1.5 active:scale-95 shadow-sm">
+          <span>💬</span>
+          <span class="hidden sm:inline">WhatsApp</span>
+        </button>
+
+        <button onclick="openStoriesModal()" title="Ver tarjeta para Stories 9:16" class="px-3.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-black text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-lg shadow-amber-500/25 active:scale-95">
+          <span>📸</span>
+          <span>Stories</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- MODAL: TARJETA DE STORIES GENERAL (9:16)  -->
+  <!-- ========================================== -->
+  <div id="stories-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-tactical-surface border-2 border-amber-500/40 rounded-3xl max-w-sm w-full p-4 relative shadow-2xl overflow-hidden max-h-[95vh] flex flex-col">
+      <div class="flex items-center justify-between pb-2.5 border-b border-tactical-border">
+        <div>
+          <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">// POSTER VIRAL STORIES (9:16) //</span>
+          <p class="text-[11px] text-slate-300 font-medium">Formato optimizado para WhatsApp Status & Instagram</p>
+        </div>
+        <button onclick="closeStoriesModal()" class="text-slate-400 hover:text-white p-1 text-2xl font-bold leading-none">&times;</button>
+      </div>
+
+      <!-- Selector de Tema Visual de la Story -->
+      <div class="flex items-center justify-center gap-1.5 p-1 rounded-xl bg-black/60 border border-tactical-border my-2">
+        <button onclick="setStoryTheme('oro')" id="theme-btn-oro" class="flex-1 py-1 px-2 rounded-lg text-[10px] font-mono font-bold transition-all bg-amber-500 text-black shadow-sm">
+          👑 Oro Táctico
+        </button>
+        <button onclick="setStoryTheme('brasa')" id="theme-btn-brasa" class="flex-1 py-1 px-2 rounded-lg text-[10px] font-mono font-bold transition-all text-slate-400 hover:text-white">
+          🔥 Brasa Viva
+        </button>
+        <button onclick="setStoryTheme('stealth')" id="theme-btn-stealth" class="flex-1 py-1 px-2 rounded-lg text-[10px] font-mono font-bold transition-all text-slate-400 hover:text-white">
+          ⚔️ Stealth Militar
+        </button>
+      </div>
+
+      <!-- Visual Card con Aura y Gancho Viral -->
+      <div id="story-card" class="mt-1 p-4 rounded-2xl bg-gradient-to-b from-[#1a1408] via-[#0f0c05] to-[#050402] border-2 border-amber-500/60 text-center font-sans relative overflow-hidden shadow-[0_0_30px_rgba(255,184,0,0.25)] flex-1 flex flex-col justify-between">
+        
+        <!-- Header con Silueta y Frase Célebre -->
+        <div>
+          <div class="text-[9px] font-mono tracking-widest text-amber-400 font-bold uppercase mb-0.5">
+            —— MONTERREY · NUEVO LEÓN · 25.6866° N, 100.3161° W ——
+          </div>
+          <div class="text-xl sm:text-2xl font-black uppercase tracking-tight leading-none mt-1">
+            <span class="text-white drop-shadow">¿SE VA A</span>
+            <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]">HACER?</span>
+          </div>
+          <div class="text-[9px] text-amber-300/90 font-semibold tracking-wider uppercase mt-1">
+            — LA CALCULADORA TÁCTICA DE LA CARNITA ASADA —
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/70 border border-amber-500/30 text-[9px] font-mono text-amber-400 mt-1 shadow-sm">
+            <span class="tracking-widest opacity-80">|||||||||||||</span>
+            <span>〈 CÓDIGO REGIO ACTIVADO 〉</span>
+          </div>
+        </div>
+
+        <!-- Menú y Vituallas Tácticas -->
+        <div class="my-2 space-y-1.5 text-left text-xs bg-black/70 backdrop-blur-sm p-3 rounded-xl border border-white/[0.08]">
+          <div class="flex items-center justify-between pb-1 border-b border-white/[0.06]">
+            <span class="text-[10px] font-mono text-amber-400 font-bold">👥 CONTINGENTE REGIO</span>
+            <span class="text-[11px] font-bold text-white mono" id="story-pax">0 personas</span>
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-amber-400 font-bold block mb-0.5">🥩 MENÚ EN PARRILLA</span>
+            <div class="text-slate-100 font-medium text-[11px] leading-snug" id="story-cuts">Arrachera marinada, Aguja norteña</div>
+          </div>
+          <div class="pt-0.5 flex items-center justify-between text-[11px]">
+            <span class="text-[10px] font-mono text-amber-400 font-bold">🪵 BRASA & SED:</span>
+            <span class="text-slate-200 mono text-[10px]" id="story-drinks">Carbón mezquite · Cheves frías</span>
+          </div>
+        </div>
+
+        <!-- Display Dorado de Coperacha -->
+        <div class="p-3 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/25 to-amber-500/15 border-2 border-amber-500/60 text-center shadow-lg">
+          <div class="text-[10px] font-mono text-slate-300 uppercase font-semibold">PRESUPUESTO TOTAL ESTIMADO</div>
+          <div class="text-2xl sm:text-3xl font-black mono text-white tracking-tight" id="story-total">$0 MXN</div>
+          <div class="mt-1 pt-1 border-t border-amber-500/30 text-xs sm:text-sm font-black text-amber-400 mono">
+            👉 COPERACHA: <span id="story-por-cabeza" class="text-white bg-black/60 px-2 py-0.5 rounded border border-amber-500/40">$0</span> POR CABEZA
+          </div>
+        </div>
+
+        <!-- STICKER INTERACTIVO VIRAL PARA STORIES (GANCHO ORGANICO) -->
+        <div class="my-1.5 p-2 rounded-xl bg-black/80 border border-amber-500/40 text-center">
+          <span class="text-[10px] font-mono text-amber-400 font-bold tracking-wider block mb-1">
+            🗳️ RESPONDE ESTA HISTORIA: ¿JALAS O TE FRESEAS?
+          </span>
+          <div class="grid grid-cols-2 gap-1.5 text-[10px] font-black font-mono">
+            <span class="py-1 px-1.5 rounded-lg bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-1">
+              <span>🟢</span> JALO CON TODO
+            </span>
+            <span class="py-1 px-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 flex items-center justify-center gap-1">
+              <span>⚪</span> ME FRESEO 🥱
+            </span>
+          </div>
+        </div>
+
+        <!-- Punchline & Firma Minimalista -->
+        <div>
+          <div class="text-[10px] text-amber-300 font-bold italic leading-tight">
+            ⚠️ «El que llegue tarde le toca lavar la parrilla y recoger el mugrero.»
+          </div>
+          <div class="text-[9px] text-slate-400 font-mono tracking-wider mt-1">
+            [BETA v1.0] · By. ULS LLC.
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons (Download Image + Share Sheet + Copy WhatsApp) -->
+      <div class="mt-3 space-y-2">
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="descargarStoryGeneralPng()" class="py-2.5 rounded-xl bg-amber-500 text-black font-black text-xs uppercase tracking-wider hover:bg-amber-400 transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-95">
+            <span>📥 Descargar PNG</span>
+          </button>
+          <button onclick="compartirStoryGeneral()" class="py-2.5 rounded-xl bg-tactical-card border border-tactical-border hover:border-amber-400 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 active:scale-95 shadow-sm">
+            <span>📤 Compartir Story</span>
+          </button>
+        </div>
+        <button onclick="copiarRecadoWhatsApp()" class="w-full py-2 rounded-xl bg-tactical-card/70 border border-tactical-border hover:border-emerald-400 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 active:scale-95">
+          <span>💬 Copiar Cuenta para WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: LOS 10 MANDAMIENTOS SAGRADOS       -->
+  <!-- ========================================== -->
+  <div id="mandamientos-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-tactical-surface border border-tactical-border rounded-3xl max-w-lg w-full p-4 sm:p-6 relative shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 border-b border-tactical-border">
+        <div>
+          <span class="text-[10px] font-mono font-bold text-amber-400 uppercase">CÓDIGO DE HONOR DE NUEVO LEÓN</span>
+          <h3 class="text-base font-black text-white uppercase tracking-tight">Los 10 Mandamientos Sagrados del Asador</h3>
+          <p class="text-[11px] text-slate-400">Pica en 📸 en cualquier mandamiento para descargar o compartir su Story.</p>
+        </div>
+        <button onclick="closeMandamientosModal()" class="text-slate-400 hover:text-white p-1 text-xl font-bold">&times;</button>
+      </div>
+
+      <div class="mt-3 overflow-y-auto space-y-2.5 pr-1 text-xs" id="mandamientos-container"></div>
+
+      <div class="mt-4 pt-3 border-t border-tactical-border flex gap-2">
+        <button onclick="closeMandamientosModal()" class="w-full py-2.5 rounded-xl bg-amber-500 text-black font-black text-xs uppercase tracking-wider hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+          Entendido y Jurado Compadre 🤝
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: TARJETA DE STORY INDIVIDUAL PARA UN MANDAMIENTO  -->
+  <!-- ======================================================== -->
+  <div id="mandamiento-story-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-tactical-surface border-2 border-amber-500/40 rounded-3xl max-w-xs w-full p-4 relative shadow-2xl flex flex-col">
+      <div class="flex items-center justify-between pb-2 border-b border-tactical-border">
+        <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">STORY 9:16 · MANDAMIENTO REGIO</span>
+        <button onclick="closeMandamientoStoryModal()" class="text-slate-400 hover:text-white p-1 text-xl font-bold leading-none">&times;</button>
+      </div>
+
+      <!-- Tarjeta 9:16 del mandamiento con estética editorial coleccionable -->
+      <div id="single-mandamiento-card" class="my-3 p-5 rounded-2xl bg-gradient-to-b from-tactical-cardHighlight via-tactical-card to-tactical-black border-2 border-amber-500 text-center flex flex-col justify-between aspect-[9/14] shadow-2xl relative">
+        <div>
+          <div class="text-[10px] font-mono tracking-widest text-amber-400 font-bold uppercase">
+            ⛰️ MONTERREY, N.L. · LEY DEL ASADOR ⛰️
+          </div>
+          <div class="text-[9px] text-slate-300 font-medium">CÓDIGO DE HONOR DE NUEVO LEÓN</div>
+        </div>
+
+        <div class="my-auto py-3">
+          <div class="text-amber-400 text-2xl font-black mono mb-2 tracking-tight" id="single-m-num">MANDAMIENTO #1</div>
+          <h3 class="text-base sm:text-lg font-black text-white leading-tight uppercase" id="single-m-title">
+            LA CARNE NO SE APLASTA NI SE PICA
+          </h3>
+          <p class="text-xs text-slate-300 mt-2.5 leading-relaxed bg-black/50 p-2.5 rounded-xl border border-white/[0.08]" id="single-m-desc">
+            Si la aplastas con la pala o la picas con tenedor, se le sale el jugo y te quitan el mandil inmediatamente.
+          </p>
+        </div>
+
+        <div>
+          <!-- Viral CTA Hook -->
+          <div class="text-[10px] font-mono text-amber-300 font-bold bg-amber-500/10 py-1.5 px-2 rounded-lg border border-amber-500/25">
+            👉 Etiqueta al compadre que siempre la caga con esto
+          </div>
+          <div class="text-[9px] text-slate-400 mono mt-1.5">
+            [BETA v1.0] · By. ULS LLC.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="descargarMandamientoPng()" class="py-3 rounded-xl bg-amber-500 text-black font-black text-xs uppercase tracking-wider hover:bg-amber-400 transition-all flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
+          <span>📥 Descargar PNG</span>
+        </button>
+        <button onclick="compartirMandamientoStory()" class="py-3 rounded-xl bg-tactical-card border border-tactical-border text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-sm">
+          <span>📤 Compartir</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: TARJETA DE STORY PARA MÉTODO DE FUEGO            -->
+  <!-- ======================================================== -->
+  <div id="fire-story-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-tactical-surface border-2 border-amber-500/40 rounded-3xl max-w-xs w-full p-4 relative shadow-2xl flex flex-col">
+      <div class="flex items-center justify-between pb-2 border-b border-tactical-border">
+        <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider">STORY 9:16 · PROTOCOLO DE FUEGO</span>
+        <button onclick="closeFireStoryModal()" class="text-slate-400 hover:text-white p-1 text-xl font-bold leading-none">&times;</button>
+      </div>
+
+      <!-- Tarjeta 9:16 del método de fuego táctico -->
+      <div id="single-fire-card" class="my-3 p-4 rounded-2xl bg-gradient-to-b from-tactical-cardHighlight via-tactical-card to-tactical-black border-2 border-amber-500 text-center flex flex-col justify-between aspect-[9/14] shadow-2xl relative overflow-hidden">
+        <div>
+          <div class="text-[10px] font-mono tracking-widest text-amber-400 font-bold uppercase">
+            🔥 MONTERREY · PROTOCOLO DE BRASA 🔥
+          </div>
+          <div class="text-[9px] text-slate-300 font-medium">INGENIERÍA DE COMBUSTIÓN REGIA</div>
+        </div>
+
+        <div class="my-auto py-2 text-left">
+          <div class="text-center">
+            <span class="text-[10px] font-mono text-amber-400 font-bold" id="fire-story-level">NIVEL 2</span>
+            <h3 class="text-sm font-black text-white uppercase mt-0.5" id="fire-story-title">Chimenea Metálica (Efecto Venturi)</h3>
+          </div>
+          <div class="mt-2.5 space-y-1.5 text-[11px] text-slate-200" id="fire-story-steps"></div>
+          <div class="mt-2.5 p-2 rounded-lg bg-black/60 border border-amber-500/40 text-[10px]">
+            <span class="text-amber-300 italic" id="fire-story-veredicto">«Sacó la brasa en friega.»</span>
+          </div>
+        </div>
+
+        <div>
+          <!-- Viral CTA Hook -->
+          <div class="text-[10px] font-mono text-amber-300 font-bold bg-amber-500/10 py-1.5 px-2 rounded-lg border border-amber-500/25">
+            👉 Pásaselo al que todavía prende carbón con alcohol 💀
+          </div>
+          <div class="text-[9px] text-slate-400 mono mt-1.5">
+            [BETA v1.0] · By. ULS LLC.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="descargarFireStoryPng()" class="py-3 rounded-xl bg-amber-500 text-black font-black text-xs uppercase tracking-wider hover:bg-amber-400 transition-all flex items-center justify-center gap-1.5 active:scale-95 shadow-md">
+          <span>📥 Descargar PNG</span>
+        </button>
+        <button onclick="compartirFireStory()" class="py-3 rounded-xl bg-tactical-card border border-tactical-border text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 shadow-sm">
+          <span>📤 Compartir</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-amber-500 text-black px-4 py-2 rounded-xl font-bold text-xs shadow-2xl hidden items-center gap-2 mono transition-all">
+    <span>✓</span>
+    <span id="toast-text">Recado copiado al portapapeles</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FOOTER & CRÉDITOS: By. ULS LLC.            -->
+  <!-- ========================================== -->
+  <footer class="max-w-2xl mx-auto px-4 mt-12 mb-8 text-center border-t border-tactical-border/40 pt-6">
+    <div class="space-y-1 mb-3">
+      <h4 class="text-xs sm:text-sm font-black text-white uppercase mono tracking-wider">¿SE VA A HACER? · CENTRO DE MANDO REGIO</h4>
+      <p class="text-[11px] text-slate-400">Calculadora Táctica de Carnita Asada · Diseñada bajo la filosofía de Ingeniería, Tradición &amp; Orgullo de Nuevo León.</p>
+    </div>
+    <div class="inline-flex items-center justify-center gap-2 text-slate-400 font-mono text-xs">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+      <span>[BETA v1.0] · By. ULS LLC.</span>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    // Audio Táctico Sintetizado (Web Audio API)
+    let soundEnabled = true;
+    function playHaptic(freq = 820, duration = 0.035) {
+      if (!soundEnabled) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.035, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {
+        // Fallback silencioso
+      }
+    }
+
+    function toggleSoundFx() {
+      soundEnabled = !soundEnabled;
+      const iconEl = document.getElementById('sound-icon');
+      if (iconEl) iconEl.textContent = soundEnabled ? '🔊' : '🔇';
+      showToast(soundEnabled ? '🔊 Sonido táctico activado' : '🔇 Sonido táctico silenciado');
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0] + ' CST';
+      const el = document.getElementById('live-clock');
+      if (el) el.textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function fetchLiveMonterreyWeather() {
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=25.6866&longitude=-100.3161&current_weather=true')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.current_weather) {
+            const temp = Math.round(data.current_weather.temperature);
+            const tempEl = document.getElementById('weather-temp');
+            const descEl = document.getElementById('weather-desc');
+            const iconEl = document.getElementById('weather-icon');
+            if (tempEl) tempEl.textContent = temp + '°C';
+            if (descEl && iconEl) {
+              if (temp >= 20 && temp <= 32) {
+                descEl.textContent = "Agradable pa' asar";
+                iconEl.textContent = '⛅';
+              } else if (temp > 32) {
+                descEl.textContent = 'Calorón de asador';
+                iconEl.textContent = '☀️';
+              } else {
+                descEl.textContent = 'Fresquecito regio';
+                iconEl.textContent = '🧣';
+              }
+            }
+          }
+        })
+        .catch(() => {
+          const tempEl = document.getElementById('weather-temp');
+          const descEl = document.getElementById('weather-desc');
+          if (tempEl) tempEl.textContent = '26°C';
+          if (descEl) descEl.textContent = "Agradable pa' asar";
+        });
+    }
+    fetchLiveMonterreyWeather();
+
+    let weatherMode = 'sunny';
+    function toggleWeatherState() {
+      playHaptic(750);
+      const iconEl = document.getElementById('weather-icon');
+      const tempEl = document.getElementById('weather-temp');
+      const descEl = document.getElementById('weather-desc');
+      const statusBtn = document.getElementById('fire-status-btn');
+      const statusText = document.getElementById('fire-status-text');
+      const dot = document.getElementById('fire-dot');
+
+      if (weatherMode === 'sunny') {
+        weatherMode = 'rainy';
+        if (iconEl) iconEl.textContent = '🌧️';
+        if (tempEl) tempEl.textContent = '20°C';
+        if (descEl) descEl.textContent = 'Chipi-chipi';
+        if (statusBtn) statusBtn.className = 'flex items-center gap-1.5 px-3 py-1 rounded-xl bg-red-950/90 border border-red-500/50 text-red-300 font-bold text-[11px] mono transition-all hover:scale-105 active:scale-95 shadow-lg';
+        if (statusText) statusText.textContent = "🔴 ALERTA: LUMBRE BAJO PALAPA";
+        if (dot) dot.className = 'w-2 h-2 rounded-full bg-red-400 animate-pulse';
+        showToast('🌧️ Simulación de lluvia: Cuidado con la brasa');
+      } else {
+        weatherMode = 'sunny';
+        if (iconEl) iconEl.textContent = '⛅';
+        if (tempEl) tempEl.textContent = '26°C';
+        if (descEl) descEl.textContent = "Agradable pa' asar";
+        if (statusBtn) statusBtn.className = 'flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 font-bold text-[11px] mono transition-all hover:scale-105 active:scale-95 shadow-glow-green';
+        if (statusText) statusText.textContent = "🟢 LUZ VERDE PA' LA LUMBRE";
+        if (dot) dot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+        showToast("☀️ El cielo se deja para asar");
+      }
+    }
+
+    // STATE
+    const state = {
+      pax: { compadres: 1, comadres: 0, huercos: 0 },
+      marketTier: 'heb',
+      hungerIndex: 2,
+      hungerMultipliers: [0.6, 0.8, 1.0, 1.35, 1.65],
+      hungerLabels: [
+        "Puro Pique (x0.6)",
+        "Tranqui (x0.8)",
+        "Normal NL (x1.0)",
+        "Tragones (x1.35)",
+        "Voraz (x1.65)"
+      ],
+      currentPreset: 'banqueta',
+      drinksMode: 'byob', // 'shared' or 'byob'
+      sixesManual: 1,
+      refrescosActive: false,
+      refrescosManual: 2,
+      carbonBagsManual: 0,
+      cuts: [
+        { id: 'arrachera', name: 'Arrachera Marinada Inside/Outside', tag: 'INSIGNIA REGIA', basePrice: 480, kg: 0.0, active: true, desc: 'Suave como mantequilla, insignia regia' },
+        { id: 'aguja', name: 'Aguja Norteña con Hueso', tag: 'CON HUESO', basePrice: 265, kg: 0.0, active: true, desc: 'Jugo y textura norteña para huesear' },
+        { id: 'ribeye', name: 'Rib Eye High Choice 2 pulg', tag: '2" PRIME', basePrice: 590, kg: 0.0, active: false, desc: 'Marmoleo supremo y grasa dorada' },
+        { id: 'newyork', name: 'New York Strip Prime', tag: 'MAGRO INTENSO', basePrice: 540, kg: 0.0, active: false, desc: 'Firmeza y sabor intenso a la brasa' },
+        { id: 'sirloin', name: 'Sirloin con Hueso', tag: 'RENDIDOR', basePrice: 240, kg: 0.0, active: false, desc: 'Corte rendidor que nunca falla' },
+        { id: 'diezmillo', name: 'Diezmillo Marinado', tag: 'PA\' TAQUEAR', basePrice: 280, kg: 0.0, active: false, desc: 'Pa taquear con salsa molcajeteada' },
+        { id: 'costilla', name: 'Costilla Cargada de Res', tag: 'REINA DE BANQUETA', basePrice: 210, kg: 0.0, active: false, desc: 'La reina de la banqueta regia' },
+        { id: 'flecha', name: 'Flecha de Res Crujiente', tag: 'CROCANTE', basePrice: 165, kg: 0.0, active: false, desc: 'Doradita y crocante para el taco' },
+        { id: 'picana', name: 'Picaña en Espada', tag: 'ESPADA REGIA', basePrice: 380, kg: 0.0, active: false, desc: 'Capa de grasa sellada y fileteada' },
+        { id: 'cabreria', name: 'Cabrería de Filete con Hueso', tag: 'MANTEQUILLA', basePrice: 620, kg: 0.0, active: false, desc: 'Filete suave y mantequilloso' }
+      ],
+      botanas: [
+        { id: 'chicharron_ramos', name: 'Chicharrón de la Ramos (Cachete)', badge: 'REQUISITO RAMOS', price: 380, count: 0.5, unit: 'kg', active: false, store: 'ramos', desc: 'Requisito civil de la Ramos' },
+        { id: 'chicharron_heb', name: 'Chicharrón de Cerdo / Carnicería H-E-B', badge: 'CRYOVAC SUPREME', price: 290, count: 0.5, unit: 'kg', active: false, store: 'heb', desc: 'Crujiente y recién hecho' },
+        { id: 'chicharron_abastos', name: 'Chicharrón Prensado Mayoreo', badge: 'BODEGA DIRECTA', price: 220, count: 0.8, unit: 'kg', active: false, store: 'abastos', desc: 'Directo de empacadora' },
+        { id: 'salchicha', name: 'Salchicha para Asar con Queso', badge: 'CLÁSICO REGIO', price: 85, count: 2, unit: 'paquetes', active: true, store: 'all', desc: 'Chimex / San Juan doradita' },
+        { id: 'empalmes', name: 'Empalmes Norteños con Veneno', badge: 'FRIJOL Y MANTECA', price: 110, count: 2, unit: 'paquetes', active: true, store: 'all', desc: 'Manteca, frijol negro y veneno' },
+        { id: 'tuetanos', name: 'Tuétanos en Canoa', badge: 'A LA BRASA', price: 140, count: 4, unit: 'canoas', active: false, store: 'all', desc: 'A la sal gruesa con limón' },
+        { id: 'queso', name: 'Queso Asadero para Asar', badge: 'PARA FUNDIR', price: 120, count: 0.5, unit: 'kg', active: false, store: 'all', desc: 'Fundido en cazuelita con chiltepín' },
+        { id: 'toritos', name: 'Chiles Toritos con Queso y Tocino', badge: 'TOREADOS', price: 95, count: 6, unit: 'piezas', active: false, store: 'all', desc: 'Jalapeños toreados rellenos' }
+      ]
+    };
+
+    const tierMultipliers = {
+      abastos: 0.78,
+      heb: 1.00,
+      ramos: 1.25
+    };
+
+    const mandamientosList = [
+      { id: 1, title: "La carne no se aplasta ni se pica", desc: "Si la aplastas con la pala o la picas con tenedor, se le sale el jugo y te quitan el mandil inmediatamente." },
+      { id: 2, title: "Sólo se le da UNA vuelta al corte", desc: "Deja que selle bien hasta que empiece a sudar arriba; volteas una sola vez y esperas el término." },
+      { id: 3, title: "El chicharrón de la Ramos va primero", desc: "Se sirve en la tabla de picar con guacamole para calmar la ansiedad del contingente mientras arde la brasa." },
+      { id: 4, title: "El asador nunca se abandona solo", desc: "El parrillero siempre vigila la lumbre con una cheve bien helada en la mano." },
+      { id: 5, title: "Al fuego no se le echa agua", desc: "Si gotea grasa y levanta flama, mueves el corte a zona indirecta; jamás ahogues el carbón con agua ni cerveza." },
+      { id: 6, title: "El suegro siempre tiene la razón", desc: "Si dice que 'le falta sal' o 'le sobra calor', nomás sonríes con respeto y dices 'así es don'." },
+      { id: 7, title: "La sal se pone de grano grueso", desc: "Nada de sales finas químicas; sal de mar de grano grueso 10 minutos antes de subir a la parrilla." },
+      { id: 8, title: "La tortilla de harina se calienta arriba del corte", desc: "Un minuto antes de retirar la carne, pon la tortilla de harina encima para que absorba el vapor y el sazón." },
+      { id: 9, title: "Carbón gris, nunca sobre fuego negro", desc: "Espera paciente a que la brasa esté cubierta de ceniza blanca para evitar humo amargo y sabor a petróleo." },
+      { id: 10, title: "La parrilla se limpia con media cebolla", desc: "Antes de poner la carne, pasa media cebolla untada con aceite sobre los fierros calientes para desinfectar y dar sazón." }
+    ];
+
+    function switchTab(tab) {
+      playHaptic(720);
+      document.getElementById('tab-carnita').classList.toggle('hidden', tab !== 'carnita');
+      document.getElementById('tab-fuego').classList.toggle('hidden', tab !== 'fuego');
+      document.getElementById('tab-radar').classList.toggle('hidden', tab !== 'radar');
+
+      const tabs = ['carnita', 'fuego', 'radar'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tab) {
+          btn.className = 'py-2.5 px-2 rounded-xl font-black text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 bg-amber-500 text-black shadow-lg shadow-amber-500/25 active:scale-95';
+        } else {
+          btn.className = 'py-2.5 px-2 rounded-xl font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 text-slate-400 hover:text-white hover:bg-tactical-card active:scale-95';
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function reiniciarDesdeCero() {
+      playHaptic(600);
+      state.pax = { compadres: 1, comadres: 0, huercos: 0 };
+      state.cuts.forEach(c => { c.active = false; c.kg = 0; });
+      state.botanas.forEach(b => { b.active = false; });
+      state.carbonBagsManual = 0;
+      state.sixesManual = 1;
+      state.refrescosActive = false;
+      state.refrescosManual = 2;
+      state.drinksMode = 'byob';
+      document.getElementById('count-compadres').textContent = '1';
+      document.getElementById('count-comadres').textContent = '0';
+      document.getElementById('count-huercos').textContent = '0';
+      applyPreset('banqueta');
+      renderAll();
+      showToast('🔄 Cuenta reiniciada desde cero');
+    }
+
+    function adjustPax(type, delta) {
+      playHaptic(delta > 0 ? 880 : 660);
+      state.pax[type] = Math.max(0, state.pax[type] + delta);
+      document.getElementById('count-' + type).textContent = state.pax[type];
+      recalcMeatFromPax();
+      renderAll();
+    }
+
+    function setMarketTier(tier) {
+      playHaptic(780);
+      state.marketTier = tier;
+      ['abastos', 'heb', 'ramos'].forEach(t => {
+        const el = document.getElementById('tier-' + t);
+        if (t === tier) {
+          el.className = 'p-3 rounded-2xl border text-left transition-all border-amber-500 bg-amber-500/10 shadow-glow-amber active:scale-95';
+        } else {
+          el.className = 'p-3 rounded-2xl border text-left transition-all border-tactical-border bg-tactical-card hover:border-slate-500 active:scale-95';
+        }
+      });
+      renderAll();
+    }
+
+    function updateHunger(val) {
+      playHaptic(650 + Number(val) * 80);
+      state.hungerIndex = parseInt(val);
+      document.getElementById('hunger-label').textContent = state.hungerLabels[state.hungerIndex];
+      recalcMeatFromPax();
+      renderAll();
+    }
+
+    function applyPreset(preset) {
+      playHaptic(760);
+      state.currentPreset = preset;
+      const titles = {
+        banqueta: "Pa' los Tacos / Banqueta",
+        clasica: "La Clásica Regia",
+        patron: "Modo Patrón / Pa' Lucirse",
+        botanera: "La Botanera con Picaña"
+      };
+      document.getElementById('current-preset-name').textContent = titles[preset];
+
+      ['banqueta', 'clasica', 'patron', 'botanera'].forEach(p => {
+        const el = document.getElementById('preset-' + p);
+        if (p === preset) {
+          el.className = 'p-3 sm:p-3.5 rounded-2xl border border-amber-500 bg-amber-500/10 text-left transition-all shadow-glow-amber active:scale-95';
+        } else {
+          el.className = 'p-3 sm:p-3.5 rounded-2xl border border-tactical-border bg-tactical-card text-left hover:border-slate-500 transition-all active:scale-95';
+        }
+      });
+
+      const totalPax = state.pax.compadres + state.pax.comadres + state.pax.huercos;
+      if (totalPax === 0) {
+        state.pax.compadres = 4;
+        state.pax.comadres = 4;
+        document.getElementById('count-compadres').textContent = '4';
+        document.getElementById('count-comadres').textContent = '4';
+        showToast('🥩 Paquete cargado para 8 personas (puedes ajustar comensales)');
+      }
+
+      state.cuts.forEach(c => { c.active = false; c.kg = 0; });
+      if (preset === 'banqueta') {
+        activateCut('costilla');
+        activateCut('flecha');
+      } else if (preset === 'clasica') {
+        activateCut('arrachera');
+        activateCut('aguja');
+      } else if (preset === 'patron') {
+        activateCut('ribeye');
+        activateCut('newyork');
+      } else if (preset === 'botanera') {
+        activateCut('picana');
+        activateCut('costilla');
+      }
+      recalcMeatFromPax();
+      renderAll();
+    }
+
+    function activateCut(id) {
+      const cut = state.cuts.find(c => c.id === id);
+      if (cut) cut.active = true;
+    }
+
+    function setDrinksMode(mode) {
+      playHaptic(750);
+      state.drinksMode = mode;
+      const btnShared = document.getElementById('drinks-btn-shared');
+      const btnByob = document.getElementById('drinks-btn-byob');
+      const chevesRow = document.getElementById('cheves-control-row');
+
+      if (mode === 'shared') {
+        btnShared.className = 'p-3 rounded-xl border text-left transition-all border-amber-500 bg-amber-500/10 text-xs shadow-sm active:scale-95';
+        btnByob.className = 'p-3 rounded-xl border text-left transition-all border-tactical-border bg-tactical-surface text-xs hover:border-slate-500 active:scale-95';
+        if (chevesRow) chevesRow.classList.remove('opacity-40');
+        showToast('🍻 Cheves añadidas a la coperacha común');
+      } else {
+        btnByob.className = 'p-3 rounded-xl border text-left transition-all border-amber-500 bg-amber-500/10 text-xs shadow-sm active:scale-95';
+        btnShared.className = 'p-3 rounded-xl border text-left transition-all border-tactical-border bg-tactical-surface text-xs hover:border-slate-500 active:scale-95';
+        if (chevesRow) chevesRow.classList.add('opacity-40');
+        showToast('🧊 Cheves en $0 (cada quien lleva sus frías)');
+      }
+      renderAll();
+    }
+
+    function adjustSixes(delta) {
+      playHaptic(delta > 0 ? 850 : 680);
+      state.sixesManual = Math.max(0, state.sixesManual + delta);
+      if (state.sixesManual > 0 && state.drinksMode === 'byob') {
+        setDrinksMode('shared');
+      }
+      renderAll();
+    }
+
+    function toggleRefrescosActive() {
+      playHaptic(740);
+      const checkbox = document.getElementById('refrescos-active-checkbox');
+      state.refrescosActive = checkbox ? checkbox.checked : false;
+      renderAll();
+    }
+
+    function adjustRefrescos(delta) {
+      playHaptic(delta > 0 ? 850 : 680);
+      state.refrescosManual = Math.max(0, state.refrescosManual + delta);
+      if (state.refrescosManual > 0) {
+        state.refrescosActive = true;
+        const cb = document.getElementById('refrescos-active-checkbox');
+        if (cb) cb.checked = true;
+      }
+      renderAll();
+    }
+
+    function recalcMeatFromPax() {
+      const totalPax = state.pax.compadres + state.pax.comadres + state.pax.huercos;
+      if (totalPax === 0) {
+        state.cuts.forEach(c => { c.kg = 0; });
+        return;
+      }
+      const mult = state.hungerMultipliers[state.hungerIndex];
+      const rawGrams = (state.pax.compadres * 450) + (state.pax.comadres * 350) + (state.pax.huercos * 150);
+      const totalKgNeeded = (rawGrams * mult) / 1000;
+
+      const activeCuts = state.cuts.filter(c => c.active);
+      if (activeCuts.length > 0) {
+        const kgPerCut = totalKgNeeded / activeCuts.length;
+        activeCuts.forEach(c => {
+          c.kg = Math.max(0.25, Math.round(kgPerCut * 10) / 10);
+        });
+      }
+    }
+
+    function toggleCut(id) {
+      playHaptic(750);
+      const cut = state.cuts.find(c => c.id === id);
+      if (cut) {
+        cut.active = !cut.active;
+        if (!cut.active) cut.kg = 0;
+        recalcMeatFromPax();
+        renderAll();
+      }
+    }
+
+    function adjustCutKg(id, delta) {
+      playHaptic(delta > 0 ? 860 : 680);
+      const cut = state.cuts.find(c => c.id === id);
+      if (cut) {
+        cut.kg = Math.max(0, Math.round((cut.kg + delta) * 10) / 10);
+        if (cut.kg > 0) cut.active = true;
+        renderAll();
+      }
+    }
+
+    function toggleBotana(id) {
+      playHaptic(750);
+      const b = state.botanas.find(x => x.id === id);
+      if (b) {
+        b.active = !b.active;
+        renderAll();
+      }
+    }
+
+    function adjustBotanaCount(id, delta) {
+      playHaptic(delta > 0 ? 860 : 680);
+      const b = state.botanas.find(x => x.id === id);
+      if (b) {
+        b.count = Math.max(0, Math.round((b.count + delta) * 10) / 10);
+        if (b.count > 0) b.active = true;
+        renderAll();
+      }
+    }
+
+    function adjustCarbon(delta) {
+      playHaptic(delta > 0 ? 860 : 680);
+      state.carbonBagsManual += delta;
+      renderAll();
+    }
+
+    // MAIN RENDER & CALCULATION ENGINE
+    function renderAll() {
+      const totalPax = state.pax.compadres + state.pax.comadres + state.pax.huercos;
+      document.getElementById('total-pax').textContent = totalPax;
+      document.getElementById('pax-breakdown').textContent = '(' + (state.pax.compadres + state.pax.comadres) + ' adultos · ' + state.pax.huercos + ' huercos)';
+
+      const tierMult = tierMultipliers[state.marketTier];
+
+      // 1. Meat
+      const meatListEl = document.getElementById('meat-list');
+      meatListEl.innerHTML = '';
+      let totalMeatKg = 0;
+      let subtotalMeat = 0;
+
+      state.cuts.forEach(cut => {
+        if (cut.active) {
+          totalMeatKg += cut.kg;
+          const currentPrice = Math.round(cut.basePrice * tierMult);
+          const itemCost = Math.round(currentPrice * cut.kg);
+          subtotalMeat += itemCost;
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'rounded-2xl bg-tactical-card/90 border border-tactical-border/90 hover:border-amber-500/40 p-3 sm:p-3.5 flex items-center justify-between gap-3 shadow-sm transition-all';
+          itemEl.innerHTML = `
+            <div class="flex items-center gap-3 flex-1 min-w-0">
+              <input type="checkbox" checked onchange="toggleCut('${cut.id}')" class="w-4 h-4 rounded bg-tactical-surface border-tactical-border text-amber-500 cursor-pointer">
+              <div class="truncate">
+                <div class="flex items-center gap-2 truncate">
+                  <span class="font-bold text-xs sm:text-sm text-white truncate">${cut.name}</span>
+                  <span class="text-[9px] font-mono font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/25 shrink-0 hidden sm:inline-block">${cut.tag || 'CORTE SELECTO'}</span>
+                </div>
+                <div class="text-[11px] text-slate-400 mono">$${currentPrice}/kg · ${cut.desc}</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+              <div class="flex items-center bg-tactical-surface border border-tactical-border rounded-xl">
+                <button onclick="adjustCutKg('${cut.id}', -0.25)" class="px-2.5 py-1 text-slate-300 font-bold hover:text-white active:scale-90 transition-transform">-</button>
+                <span class="px-1 text-xs font-mono font-bold text-white min-w-[3.2rem] text-center">${cut.kg} kg</span>
+                <button onclick="adjustCutKg('${cut.id}', 0.25)" class="px-2.5 py-1 text-slate-300 font-bold hover:text-white active:scale-90 transition-transform">+</button>
+              </div>
+              <div class="text-xs sm:text-sm font-mono font-bold text-amber-400 min-w-[4.5rem] text-right">$${itemCost.toLocaleString()} MXN</div>
+            </div>
+          `;
+          meatListEl.appendChild(itemEl);
+        }
+      });
+      document.getElementById('meat-total-kg').textContent = totalMeatKg.toFixed(2) + ' kg';
+
+      // 2. Chips
+      const chipsEl = document.getElementById('meat-chips-container');
+      chipsEl.innerHTML = '';
+      state.cuts.forEach(cut => {
+        if (!cut.active) {
+          const btn = document.createElement('button');
+          btn.className = 'px-3 py-1.5 rounded-xl bg-tactical-card/90 border border-tactical-border hover:border-amber-400 text-slate-300 hover:text-amber-400 text-xs font-mono transition-all active:scale-95 shadow-sm';
+          btn.innerHTML = '+ ' + cut.name.split(' ')[0] + ' <span class="text-slate-500">($' + Math.round(cut.basePrice * tierMult) + ')</span>';
+          btn.onclick = function() {
+            playHaptic(800);
+            cut.active = true;
+            cut.kg = totalPax > 0 ? 0.75 : 0;
+            renderAll();
+          };
+          chipsEl.appendChild(btn);
+        }
+      });
+
+      // 3. Botanas filtradas por tienda con badges
+      const botanasListEl = document.getElementById('botanas-list');
+      botanasListEl.innerHTML = '';
+      let subtotalBotanas = 0;
+
+      const currentTier = state.marketTier;
+      state.botanas.forEach(b => {
+        let isVisible = true;
+        if (b.id.startsWith('chicharron_')) {
+          isVisible = (b.store === currentTier);
+        }
+
+        if (isVisible) {
+          const itemCost = (b.active && totalPax > 0) ? Math.round(b.price * b.count) : 0;
+          if (b.active && totalPax > 0) subtotalBotanas += itemCost;
+
+          const card = document.createElement('div');
+          card.className = 'p-3 rounded-2xl border transition-all ' + (b.active ? 'bg-tactical-card/95 border-amber-500/40 shadow-sm' : 'bg-tactical-surface/50 border-tactical-border/60 opacity-60');
+          card.innerHTML = `
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <input type="checkbox" ${b.active ? 'checked' : ''} onchange="toggleBotana('${b.id}')" class="w-3.5 h-3.5 rounded bg-tactical-surface border-tactical-border text-amber-500 cursor-pointer">
+                <span class="text-xs font-bold ${b.active ? 'text-white' : 'text-slate-400'}">${b.name}</span>
+              </div>
+              <span class="text-xs font-mono font-bold ${b.active ? 'text-amber-400' : 'text-slate-500'}">$${itemCost}</span>
+            </div>
+            <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-tactical-border/60 text-[10px]">
+              <span class="text-slate-400 mono">${b.desc}</span>
+              <div class="flex items-center gap-1 bg-tactical-surface px-1.5 py-0.5 rounded-lg border border-tactical-border">
+                <button onclick="adjustBotanaCount('${b.id}', -0.5)" class="text-slate-400 hover:text-white font-bold px-1 active:scale-90 transition-transform">-</button>
+                <span class="font-mono text-white px-1">${b.count} ${b.unit}</span>
+                <button onclick="adjustBotanaCount('${b.id}', 0.5)" class="text-slate-400 hover:text-white font-bold px-1 active:scale-90 transition-transform">+</button>
+              </div>
+            </div>
+          `;
+          botanasListEl.appendChild(card);
+        }
+      });
+      document.getElementById('botanas-subtotal').textContent = '$' + subtotalBotanas.toLocaleString() + ' MXN';
+
+      // 4. Carbón y Bebidas
+      let totalCarbonBags = 0;
+      let carbonCost = 0;
+      if (totalMeatKg > 0) {
+        const autoCarbonBags = Math.max(1, Math.ceil(totalMeatKg / 2.0));
+        totalCarbonBags = Math.max(1, autoCarbonBags + state.carbonBagsManual);
+        carbonCost = totalCarbonBags * 85;
+      }
+      document.getElementById('carbon-bags').textContent = totalCarbonBags + ' bolsa(s) de mezquite (' + (totalCarbonBags * 3) + ' kg)';
+      document.getElementById('carbon-cost').textContent = '$' + carbonCost + ' MXN';
+
+      // Cálculo de Bebidas (Sixes de Cheves + Refrescos según apartado de bebidas)
+      const currentSixes = state.sixesManual !== undefined ? state.sixesManual : 1;
+      const totalLatas = currentSixes * 6;
+      const chevesCost = (state.drinksMode === 'shared') ? (currentSixes * 168) : 0;
+
+      // Refrescos
+      const refrescosCount = state.refrescosManual !== undefined ? state.refrescosManual : Math.max(0, state.pax.huercos * 2);
+      const refrescosCost = (state.refrescosActive && refrescosCount > 0) ? (refrescosCount * 20) : 0;
+
+      const totalDrinksCost = chevesCost + refrescosCost;
+      document.getElementById('drinks-cost').textContent = '$' + totalDrinksCost.toLocaleString() + ' MXN';
+
+      // Updates en UI
+      document.getElementById('sixes-count-display').textContent = currentSixes + (currentSixes === 1 ? ' Six' : ' Sixes');
+      document.getElementById('cheves-detail-text').textContent = currentSixes + ' Six (' + totalLatas + ' latas) · $' + chevesCost.toLocaleString() + ' MXN ($28/lata)';
+      
+      document.getElementById('refrescos-count-display').textContent = refrescosCount;
+      document.getElementById('refrescos-detail-text').textContent = (state.refrescosActive && refrescosCount > 0) 
+        ? (refrescosCount + ' piezas · $' + refrescosCost + ' MXN ($20/pza)')
+        : '0 refrescos ($0 MXN)';
+
+      const recaudoCost = totalPax > 0 ? (totalPax * 35) : 0;
+      const totalGeneral = subtotalMeat + subtotalBotanas + carbonCost + totalDrinksCost + recaudoCost;
+      const porCabeza = totalPax > 0 ? Math.ceil(totalGeneral / totalPax) : 0;
+
+      document.getElementById('hud-total').textContent = '$' + totalGeneral.toLocaleString();
+      document.getElementById('hud-por-cabeza').textContent = '$' + porCabeza;
+      document.getElementById('hud-pax-count').textContent = '(' + totalPax + ' personas)';
+
+      document.getElementById('final-ticket-total').textContent = '$' + totalGeneral.toLocaleString() + ' MXN';
+      document.getElementById('final-ticket-por-cabeza').textContent = '$' + porCabeza;
+      document.getElementById('final-ticket-pax').textContent = 'Calculado exactamente para ' + totalPax + ' personas';
+
+      document.getElementById('story-total').textContent = '$' + totalGeneral.toLocaleString() + ' MXN';
+      document.getElementById('story-por-cabeza').textContent = '$' + porCabeza;
+      document.getElementById('story-pax').textContent = totalPax + ' personas (' + state.pax.compadres + ' compadres, ' + state.pax.comadres + ' comadres, ' + state.pax.huercos + ' huercos)';
+      
+      const activeCutNames = state.cuts.filter(c => c.active && c.kg > 0).map(c => c.name.split(' ')[0]).join(' + ');
+      document.getElementById('story-cuts').textContent = activeCutNames ? activeCutNames + ' (' + totalMeatKg.toFixed(1) + ' kg)' : 'Por definir';
+      document.getElementById('story-drinks').textContent = totalCarbonBags + ' bolsas carbón · ' + (state.drinksMode === 'shared' ? (totalLatas + ' frías') : 'BYOB');
+
+      updateStepperBadges(totalPax, totalMeatKg, totalGeneral);
+    }
+
+    function updateStepperBadges(totalPax, totalMeatKg, totalGeneral) {
+      const b1 = document.getElementById('badge-step-1');
+      if (totalPax > 0) {
+        b1.className = 'w-7 h-7 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm mono shadow-glow-green';
+        b1.innerHTML = '✓';
+      } else {
+        b1.className = 'w-7 h-7 rounded-xl bg-amber-500 text-black font-black flex items-center justify-center text-sm mono shadow-md';
+        b1.innerHTML = '1';
+      }
+
+      const b2 = document.getElementById('badge-step-2');
+      b2.className = 'w-7 h-7 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm mono shadow-glow-green';
+      b2.innerHTML = '✓';
+
+      const b3 = document.getElementById('badge-step-3');
+      b3.className = 'w-7 h-7 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm mono shadow-glow-green';
+      b3.innerHTML = '✓';
+
+      const b4 = document.getElementById('badge-step-4');
+      if (totalMeatKg > 0) {
+        b4.className = 'w-7 h-7 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm mono shadow-glow-green';
+        b4.innerHTML = '✓';
+      } else {
+        b4.className = 'w-7 h-7 rounded-xl bg-amber-500 text-black font-black flex items-center justify-center text-sm mono shadow-md';
+        b4.innerHTML = '4';
+      }
+
+      const b5 = document.getElementById('badge-step-5');
+      if (totalGeneral > 0) {
+        b5.className = 'w-7 h-7 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm mono shadow-glow-green';
+        b5.innerHTML = '✓';
+      } else {
+        b5.className = 'w-7 h-7 rounded-xl bg-amber-500 text-black font-black flex items-center justify-center text-sm mono shadow-md';
+        b5.innerHTML = '5';
+      }
+    }
+
+    // FIRE LEVEL SELECTION & DETAIL
+    const fireData = {
+      1: {
+        id: 1,
+        title: "NIVEL 1 · EL FORÁNEO (AMATEUR)",
+        subtitle: "Método servilleta y aceite vegetal",
+        time: 24,
+        steps: [
+          "Arma un volcán con el carbón dejando un hoyo profundo al centro.",
+          "Mete una servilleta de papel bien empapada en aceite de cocina.",
+          "Enciende la servilleta con un cerillo y NO le andes soplando desesperado; en 20 minutos agarra solo.",
+          "Tu suegro te va a juzgar con la mirada; tú nomás sírvele una cheve y hazte como que no viste."
+        ],
+        veredicto: "«Tarda un chingo pero prende sin apestar a gasolina.»",
+        respeto: "35% (Aceptable para primerizos y departamentos)"
+      },
+      2: {
+        id: 2,
+        title: "NIVEL 2 · DOMINGUERO TECNOLÓGICO (EFECTO VENTURI)",
+        subtitle: "Tiro forzado por chimenea de acero galvanizado",
+        time: 15,
+        steps: [
+          "Arruga 2 hojas de periódico en forma de dona y colócalas en el fondo inferior de la chimenea.",
+          "Llena la chimenea hasta el borde superior con trozos seleccionados de carbón de mezquite.",
+          "Coloca la chimenea dentro del asador y enciende el periódico por las ranuras inferiores.",
+          "Por convección física (Efecto Venturi), el aire caliente acelera la combustión en cadena.",
+          "En 15 minutos exactos, cuando el carbón tenga orillas blancas, toma el asa con guante y vacía la brasa."
+        ],
+        veredicto: "«Harto fierro y tecnología, pero sacó la brasa en friega. Pásame una cheve.»",
+        respeto: "78% (Respetado por ingenieros de San Nicolás y parrilleros Weber)"
+      },
+      3: {
+        id: 3,
+        title: "NIVEL 3 · EL TÍO REGIO (TRADICIONAL)",
+        subtitle: "La corona de caguama y periódico El Norte",
+        time: 18,
+        steps: [
+          "Pon una botella de caguama de vidrio bien centrada sobre la parrilla de fondo.",
+          "Haz rollitos apretados con páginas de El Norte y forma varios aros alrededor de la botella.",
+          "Arma una montaña cónica de carbón alrededor de la botella hasta cubrirla.",
+          "Saca la botella despacito hacia arriba girándola con cuidado sin tumbar el túnel.",
+          "Tira un cerillo encendido por el tiro central. Si se apaga, no es el carbón: es que le tuviste miedo."
+        ],
+        veredicto: "«Ese sí es método de hombre de rancho, compadre. Salud.»",
+        respeto: "95% (Aprobación unánime del tío, el suegro y los vecinos)"
+      },
+      4: {
+        id: 4,
+        title: "NIVEL 4 · MAESTRO DE LA HUASTECA",
+        subtitle: "Ocote de sierra, carbón de ébano y pulmón",
+        time: 12,
+        steps: [
+          "Coloca dos astillas de ocote de la Sierra de Santiago en la base.",
+          "Apila carbón de ébano pesado formando una pirámide de flujo abierto.",
+          "Un solo cerillo al ocote. Prohibido usar aceites, químicos o iniciadores.",
+          "Sopla con un trozo de cartón o a pulmón limpio con la técnica del fuelle norteño.",
+          "En 12 minutos tienes brasa blanca nuclear lista para sellar cortes de 2 pulgadas."
+        ],
+        veredicto: "«Mis respetos, pariente. Échese una arrachera en mi honor.»",
+        respeto: "100% (Leyenda viva en la presa La Boca y San Pedro)"
+      }
+    };
+
+    let timerInterval = null;
+    let timerSeconds = 15 * 60;
+    let timerRunning = false;
+    let activeFireLevel = 2;
+
+    function selectFireLevel(lvl) {
+      playHaptic(780);
+      activeFireLevel = lvl;
+      [1, 2, 3, 4].forEach(i => {
+        const card = document.getElementById('fire-card-' + i);
+        if (card) {
+          if (i === lvl) {
+            card.className = 'p-3 rounded-2xl border border-amber-500 bg-amber-500/10 text-left transition-all shadow-glow-amber active:scale-95';
+          } else {
+            card.className = 'p-3 rounded-2xl border border-tactical-border bg-tactical-card text-left transition-all hover:border-slate-500 active:scale-95';
+          }
+        }
+      });
+
+      const data = fireData[lvl];
+      timerSeconds = data.time * 60;
+      pauseTimer();
+
+      const box = document.getElementById('fire-detail-box');
+      if (box) {
+        box.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 border-b border-tactical-border pb-3">
+            <div>
+              <span class="text-[10px] font-mono text-amber-400 font-bold uppercase">${data.title}</span>
+              <h3 class="text-sm font-bold text-white">${data.subtitle}</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="openFireStoryModal(${data.id})" title="Compartir método en Story 9:16" class="px-2.5 py-1.5 rounded-xl bg-tactical-surface border border-tactical-border hover:border-amber-400 text-amber-400 text-xs font-bold flex items-center gap-1 active:scale-95">
+                <span>📸</span>
+                <span>Story</span>
+              </button>
+              <div class="bg-tactical-surface border border-tactical-border px-3.5 py-1 rounded-xl text-center shadow-inner">
+                <div class="text-[9px] font-mono text-slate-400">TEMPORIZADOR</div>
+                <div class="text-base font-black mono text-amber-400" id="timer-display">${formatTime(timerSeconds)}</div>
+                <button onclick="toggleTimer()" id="timer-btn" class="mt-0.5 px-2.5 py-0.5 rounded-lg bg-amber-500 text-black text-[9px] font-bold uppercase tracking-wider active:scale-90 transition-transform">
+                  Iniciar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            ${data.steps.map((st, idx) => `
+              <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-tactical-surface/60 border border-tactical-border/50 shadow-sm">
+                <span class="w-5 h-5 rounded-lg bg-amber-500/20 text-amber-400 font-mono font-bold flex items-center justify-center text-xs shrink-0">${idx + 1}</span>
+                <span class="text-slate-300 leading-relaxed">${st}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-3 pt-3 border-t border-tactical-border grid grid-cols-2 gap-2 text-[11px]">
+            <div class="p-2.5 rounded-xl bg-tactical-surface border border-tactical-border shadow-sm">
+              <span class="text-slate-400 font-mono text-[9px] uppercase block">VEREDICTO DEL SUEGRO</span>
+              <span class="text-amber-300 italic">${data.veredicto}</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-tactical-surface border border-tactical-border shadow-sm">
+              <span class="text-slate-400 font-mono text-[9px] uppercase block">RESPETO SOCIAL</span>
+              <span class="text-emerald-400 font-bold font-mono">${data.respeto}</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    function toggleTimer() {
+      playHaptic(820);
+      if (timerRunning) {
+        pauseTimer();
+      } else {
+        startTimer();
+      }
+    }
+
+    function startTimer() {
+      timerRunning = true;
+      const btn = document.getElementById('timer-btn');
+      if (btn) btn.textContent = 'Pausar';
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          const disp = document.getElementById('timer-display');
+          if (disp) disp.textContent = formatTime(timerSeconds);
+        } else {
+          pauseTimer();
+          playHaptic(1200, 0.4);
+          showToast('🔥 ¡BRASA LISTA! Echa la carne a la parrilla compadre.');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      timerRunning = false;
+      if (timerInterval) clearInterval(timerInterval);
+      const btn = document.getElementById('timer-btn');
+      if (btn) btn.textContent = 'Iniciar';
+    }
+
+    // MODAL STORIES GENERAL
+    function openStoriesModal() {
+      playHaptic(900);
+      const el = document.getElementById('stories-modal');
+      if (el) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+      }
+    }
+    function closeStoriesModal() {
+      playHaptic(600);
+      const el = document.getElementById('stories-modal');
+      if (el) {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      }
+    }
+
+    // MODAL MANDAMIENTOS
+    function openMandamientosModal() {
+      playHaptic(900);
+      renderMandamientosList();
+      const el = document.getElementById('mandamientos-modal');
+      if (el) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+      }
+    }
+    function closeMandamientosModal() {
+      playHaptic(600);
+      const el = document.getElementById('mandamientos-modal');
+      if (el) {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      }
+    }
+
+    function renderMandamientosList() {
+      const container = document.getElementById('mandamientos-container');
+      if (!container) return;
+      container.innerHTML = '';
+      mandamientosList.forEach(m => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-2xl bg-tactical-card/90 border border-tactical-border/90 hover:border-amber-500/30 flex items-start justify-between gap-3 shadow-sm transition-all';
+        item.innerHTML = `
+          <div class="flex-1">
+            <strong class="text-amber-400 mono text-xs">${m.id}. ${m.title}</strong>
+            <p class="text-slate-300 mt-1 text-[11px] leading-relaxed">${m.desc}</p>
+          </div>
+          <button onclick="openSingleMandamientoStory(${m.id})" title="Compartir este mandamiento en Story" class="px-2.5 py-1.5 rounded-xl bg-tactical-surface border border-tactical-border hover:border-amber-400 text-amber-400 text-xs font-bold shrink-0 flex items-center gap-1 active:scale-95 shadow-sm">
+            <span>📸</span>
+            <span>Story</span>
+          </button>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    let activeMandamiento = null;
+    function openSingleMandamientoStory(id) {
+      playHaptic(900);
+      const m = mandamientosList.find(x => x.id === id);
+      if (!m) return;
+      activeMandamiento = m;
+      document.getElementById('single-m-num').textContent = 'MANDAMIENTO #' + m.id;
+      document.getElementById('single-m-title').textContent = m.title;
+      document.getElementById('single-m-desc').textContent = m.desc;
+
+      const el = document.getElementById('mandamiento-story-modal');
+      if (el) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+      }
+    }
+
+    function closeMandamientoStoryModal() {
+      playHaptic(600);
+      const el = document.getElementById('mandamiento-story-modal');
+      if (el) {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      }
+    }
+
+    function copiarMandamientoTexto() {
+      playHaptic(950);
+      if (!activeMandamiento) return;
+      const text = `📜 *CÓDIGO DE HONOR DE NUEVO LEÓN* 📜\n` +
+        `Mandamiento #${activeMandamiento.id}: ${activeMandamiento.title}\n\n` +
+        `«${activeMandamiento.desc}»\n\n` +
+        `👉 Etiqueta al compadre que siempre la caga con este mandamiento\n\n` +
+        `🔥 *¿SE VA A HACER?* · Centro de Mando Regio\n` +
+        `[BETA v1.0] · By. ULS LLC.`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✓ Texto del mandamiento copiado');
+      });
+    }
+
+    // MODAL DE STORY PARA MÉTODO DE FUEGO
+    let activeFireStory = null;
+    function openFireStoryModal(lvl) {
+      playHaptic(900);
+      const data = fireData[lvl];
+      if (!data) return;
+      activeFireStory = data;
+
+      document.getElementById('fire-story-level').textContent = data.title.split('·')[0].trim();
+      document.getElementById('fire-story-title').textContent = data.title.split('·')[1].trim();
+      document.getElementById('fire-story-veredicto').textContent = data.veredicto;
+
+      const stepsContainer = document.getElementById('fire-story-steps');
+      if (stepsContainer) {
+        stepsContainer.innerHTML = data.steps.map((st, i) => `<div><strong>${i+1}.</strong> ${st}</div>`).join('');
+      }
+
+      const el = document.getElementById('fire-story-modal');
+      if (el) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+      }
+    }
+
+    function closeFireStoryModal() {
+      playHaptic(600);
+      const el = document.getElementById('fire-story-modal');
+      if (el) {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      }
+    }
+
+    function copiarFireStoryTexto() {
+      playHaptic(950);
+      if (!activeFireStory) return;
+      const stepsText = activeFireStory.steps.map((s, i) => `${i+1}. ${s}`).join('\n');
+      const text = `🔥 *¿SE VA A HACER? · PROTOCOLO DE FUEGO* 🔥\n` +
+        `*${activeFireStory.title}*\n` +
+        `${activeFireStory.subtitle}\n\n` +
+        `*Pasos Tácticos:*\n${stepsText}\n\n` +
+        `*Veredicto del Suegro:* ${activeFireStory.veredicto}\n\n` +
+        `👉 Mándaselo al que todavía prende carbón con alcohol 💀\n` +
+        `[BETA v1.0] · By. ULS LLC.`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✓ Método de fuego copiado para WhatsApp');
+      });
+    }
+
+    // ========================================================
+    // COPIAR RECADO WHATSAPP COMPLETO (CON CTA VIRAL)
+    // ========================================================
+    function copiarRecadoWhatsApp() {
+      playHaptic(950);
+      const total = document.getElementById('hud-total')?.textContent || '$0';
+      const porCabeza = document.getElementById('hud-por-cabeza')?.textContent || '$0';
+      const totalPax = state.pax.compadres + state.pax.comadres + state.pax.huercos;
+      
+      const tierNames = {
+        abastos: 'Bodega Central de Abastos Guadalupe (Mayoreo)',
+        heb: 'Supermercados H-E-B / Soriana (Cortes al Vacío)',
+        ramos: 'Carnicerías de Prestigio (Ramos & San Juan)'
+      };
+
+      const cutsText = state.cuts
+        .filter(c => c.active && c.kg > 0)
+        .map(c => `  - ${c.name}: ${c.kg} kg ($${Math.round(c.basePrice * tierMultipliers[state.marketTier] * c.kg).toLocaleString()} MXN)`)
+        .join('\n') || '  - Por definir';
+
+      const botanasText = state.botanas
+        .filter(b => b.active)
+        .map(b => `  - ${b.name}: ${b.count} ${b.unit} ($${Math.round(b.price * b.count).toLocaleString()} MXN)`)
+        .join('\n');
+
+      const drinksText = state.drinksMode === 'shared'
+        ? `  - Cerveza (${state.sixesManual} Sixes / ${state.sixesManual * 6} latas): $${(state.sixesManual * 168).toLocaleString()} MXN`
+        : `  - Cerveza: $0 MXN (Cada quien lleva sus frías / BYOB)`;
+
+      const refrescosText = (state.refrescosActive && state.refrescosManual > 0)
+        ? `\n  - Refrescos (${state.refrescosManual} pzas): $${(state.refrescosManual * 20).toLocaleString()} MXN`
+        : '';
+
+      const carbonText = `  - Carbón de Mezquite: ${document.getElementById('carbon-bags')?.textContent || '1 bolsa'}`;
+
+      const text = `🔥 ¡QUIHUBO RAZA! CUENTA DE LA CARNITA ASADA 🤠
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 TIENDA: ${tierNames[state.marketTier]}
+🍗 ESTILO: ${document.getElementById('current-preset-name')?.textContent || 'La Clásica'}
+🌡️ HAMBRE: ${state.hungerLabels[state.hungerIndex]}
+
+👥 CONTINGENTE (${totalPax} personas):
+  · Compadres: ${state.pax.compadres}
+  · Comadres: ${state.pax.comadres}
+  · Huercos: ${state.pax.huercos}
+
+🥩 CORTES EN LA PARRILLA (${document.getElementById('meat-total-kg')?.textContent || '0 kg'}):
+${cutsText}
+
+${botanasText ? `🧀 BOTANAS & ENTRADAS:\n${botanasText}\n\n` : ''}🪵 BRASA:
+${carbonText}
+
+🍺 BEBIDAS:
+${drinksText}${refrescosText}
+
+────────────────────────────────────
+💰 PRESUPUESTO TOTAL: ${total} MXN
+🎟️ COPERACHA: ${porCabeza} MXN POR CABEZA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+«¿Se va a hacer o no se va a hacer la carnita asada?»
+P.D. ¡El que llegue tarde le toca lavar la parrilla y recoger el mugrero!
+📲 Arma tu coperacha táctica: [BETA v1.0] · By. ULS LLC.`;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('✓ Cuenta copiada para enviar a WhatsApp');
+        }).catch(() => {
+          showToast('✓ Cuenta generada');
+        });
+      } else {
+        showToast('✓ Cuenta generada');
+      }
+    }
+
+    // ========================================================
+    // MOTOR DE DIBUJO CANVAS PIXEL-PERFECT (1080x1920 9:16)
+    // ========================================================
+    function wrapText(ctx, text, maxWidth) {
+      const words = String(text).split(' ');
+      const lines = [];
+      let currentLine = '';
+      for (let i = 0; i < words.length; i++) {
+        const testLine = currentLine ? (currentLine + ' ' + words[i]) : words[i];
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && currentLine) {
+          lines.push(currentLine);
+          currentLine = words[i];
+        } else {
+          currentLine = testLine;
+        }
+      }
+      if (currentLine) lines.push(currentLine);
+      return lines;
+    }
+
+    function generateCanvasBlob(drawCallback) {
+      return new Promise((resolve) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        const ctx = canvas.getContext('2d');
+        drawCallback(ctx, 1080, 1920);
+        canvas.toBlob((blob) => resolve(blob), 'image/png');
+      });
+    }
+
+    async function descargarCanvasDirecto(drawCallback, filename) {
+      playHaptic(950);
+      const blob = await generateCanvasBlob(drawCallback);
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      showToast('📥 Imagen descargada directo a tu dispositivo');
+    }
+
+    async function compartirCanvasNativo(drawCallback, filename, title, text) {
+      playHaptic(950);
+      const blob = await generateCanvasBlob(drawCallback);
+      if (!blob) return;
+      const file = new File([blob], filename, { type: 'image/png' });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            title: title,
+            text: text
+          });
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+        }
+      }
+
+      // Fallback a descarga y copia al portapapeles si es soportado
+      descargarCanvasDirecto(drawCallback, filename);
+      if (navigator.clipboard && window.ClipboardItem) {
+        try {
+          navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+          showToast('📸 ¡Story descargada y copiada al portapapeles!');
+          return;
+        } catch (e) {}
+      }
+      showToast('📥 ¡Story HD descargada en tu dispositivo!');
+    }
+
+    // =========================================================================
+    // TEMAS Y MOTOR DE DIBUJO CANVAS PIXEL-PERFECT (1080x1920 9:16)
+    // =========================================================================
+    let storyTheme = 'oro'; // 'oro', 'brasa', 'stealth'
+
+    function setStoryTheme(theme) {
+      playHaptic(850);
+      storyTheme = theme;
+      
+      ['oro', 'brasa', 'stealth'].forEach(t => {
+        const btn = document.getElementById('theme-btn-' + t);
+        if (btn) {
+          if (t === theme) {
+            btn.className = 'flex-1 py-1 px-2 rounded-lg text-[10px] font-mono font-bold transition-all bg-amber-500 text-black shadow-sm';
+          } else {
+            btn.className = 'flex-1 py-1 px-2 rounded-lg text-[10px] font-mono font-bold transition-all text-slate-400 hover:text-white';
+          }
+        }
+      });
+
+      const card = document.getElementById('story-card');
+      if (card) {
+        if (theme === 'brasa') {
+          card.className = 'mt-1 p-4 rounded-2xl bg-gradient-to-b from-[#260e0a] via-[#150705] to-[#080202] border-2 border-orange-500/70 text-center font-sans relative overflow-hidden shadow-[0_0_30px_rgba(255,85,0,0.3)] flex-1 flex flex-col justify-between';
+        } else if (theme === 'stealth') {
+          card.className = 'mt-1 p-4 rounded-2xl bg-gradient-to-b from-[#111622] via-[#090d14] to-[#040609] border-2 border-slate-500/50 text-center font-sans relative overflow-hidden shadow-2xl flex-1 flex flex-col justify-between';
+        } else {
+          card.className = 'mt-1 p-4 rounded-2xl bg-gradient-to-b from-[#1a1408] via-[#0f0c05] to-[#050402] border-2 border-amber-500/60 text-center font-sans relative overflow-hidden shadow-[0_0_30px_rgba(255,184,0,0.25)] flex-1 flex flex-col justify-between';
+        }
+      }
+
+      showToast('🎨 Estilo Story: ' + (theme === 'oro' ? 'Oro Táctico' : theme === 'brasa' ? 'Brasa Viva' : 'Stealth Militar'));
+    }
+
+    // Dibuja esquinas tácticas L
+    function drawTacticalCorners(ctx, x, y, w, h, size, strokeStyle) {
+      ctx.save();
+      ctx.strokeStyle = strokeStyle;
+      ctx.lineWidth = 3;
+      // Top-left
+      ctx.beginPath(); ctx.moveTo(x, y + size); ctx.lineTo(x, y); ctx.lineTo(x + size, y); ctx.stroke();
+      // Top-right
+      ctx.beginPath(); ctx.moveTo(x + w - size, y); ctx.lineTo(x + w, y); ctx.lineTo(x + w, y + size); ctx.stroke();
+      // Bottom-left
+      ctx.beginPath(); ctx.moveTo(x, y + h - size); ctx.lineTo(x, y + h); ctx.lineTo(x + size, y + h); ctx.stroke();
+      // Bottom-right
+      ctx.beginPath(); ctx.moveTo(x + w - size, y + h); ctx.lineTo(x + w, y + h); ctx.lineTo(x + w, y + h - size); ctx.stroke();
+      ctx.restore();
+    }
+
+    // Dibuja chispas de brasa flotantes
+    function drawEmberSparks(ctx, count, sparkColor) {
+      ctx.save();
+      const sparkPositions = [
+        [140, 220, 3], [890, 260, 4], [230, 480, 2.5], [820, 510, 3.5],
+        [180, 880, 2], [920, 940, 3], [120, 1260, 4], [940, 1320, 2.5],
+        [310, 1620, 3], [780, 1680, 3.5], [160, 1750, 2], [880, 1780, 3],
+        [450, 310, 2], [630, 340, 3], [520, 150, 3.5], [260, 680, 2],
+        [380, 820, 2.8], [720, 850, 3.2], [480, 1390, 2.5], [620, 1420, 3]
+      ];
+      sparkPositions.slice(0, count).forEach(([sx, sy, r]) => {
+        const radG = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 3);
+        radG.addColorStop(0, sparkColor);
+        radG.addColorStop(0.5, sparkColor);
+        radG.addColorStop(1, 'transparent');
+        ctx.fillStyle = radG;
+        ctx.beginPath();
+        ctx.arc(sx, sy, r * 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.restore();
+    }
+
+    // Dibuja curvas de nivel topográficas de la Sierra Madre / Cerro de la Silla
+    function drawTopographicIsolines(ctx, w, h, strokeColor) {
+      ctx.save();
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = 1.6;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      const leftContours = [
+        [[-40, 180], [120, 220], [220, 310], [160, 480], [-20, 560]],
+        [[-40, 240], [140, 280], [260, 390], [190, 560], [-20, 640]],
+        [[-40, 310], [170, 360], [300, 480], [220, 650], [-20, 740]],
+        [[-40, 390], [190, 450], [330, 580], [240, 750], [-20, 840]],
+        [[-40, 480], [210, 550], [350, 690], [250, 860], [-20, 950]],
+        [[-40, 580], [220, 660], [340, 810], [240, 980], [-20, 1070]]
+      ];
+
+      const rightContours = [
+        [[w + 40, 160], [w - 110, 210], [w - 230, 310], [w - 180, 490], [w + 20, 580]],
+        [[w + 40, 230], [w - 130, 280], [w - 270, 400], [w - 210, 580], [w + 20, 670]],
+        [[w + 40, 310], [w - 160, 370], [w - 310, 500], [w - 230, 680], [w + 20, 780]],
+        [[w + 40, 400], [w - 180, 470], [w - 340, 610], [w - 240, 790], [w + 20, 890]],
+        [[w + 40, 500], [w - 190, 580], [w - 350, 730], [w - 240, 910], [w + 20, 1010]],
+        [[w + 40, 610], [w - 190, 700], [w - 330, 860], [w - 220, 1040], [w + 20, 1140]]
+      ];
+
+      const drawSpline = (pts) => {
+        ctx.beginPath();
+        ctx.moveTo(pts[0][0], pts[0][1]);
+        for (let i = 1; i < pts.length - 1; i++) {
+          const xc = (pts[i][0] + pts[i + 1][0]) / 2;
+          const yc = (pts[i][1] + pts[i + 1][1]) / 2;
+          ctx.quadraticCurveTo(pts[i][0], pts[i][1], xc, yc);
+        }
+        ctx.quadraticCurveTo(
+          pts[pts.length - 1][0],
+          pts[pts.length - 1][1],
+          pts[pts.length - 1][0],
+          pts[pts.length - 1][1]
+        );
+        ctx.stroke();
+      };
+
+      leftContours.forEach(drawSpline);
+      rightContours.forEach(drawSpline);
+      ctx.restore();
+    }
+
+    // Dibuja código de barras táctico con código regio activado
+    function drawTacticalBarcode(ctx, x, y, width, height, barColor, label) {
+      ctx.save();
+      ctx.fillStyle = barColor;
+      
+      const pattern = [
+        3, 1, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 1, 4, 2, 1, 3, 2, 1, 4, 1, 2, 3, 1, 4, 2, 1, 3, 2, 1, 4, 2, 1, 3, 1, 4, 2, 1, 3
+      ];
+      let curX = x;
+      const unit = width / pattern.reduce((a, b) => a + b, 0);
+      
+      pattern.forEach((wVal, idx) => {
+        const barW = wVal * unit * 0.78;
+        if (idx % 2 === 0) {
+          ctx.fillRect(curX, y, barW, height);
+        }
+        curX += wVal * unit;
+      });
+
+      if (label) {
+        ctx.textAlign = 'center';
+        ctx.font = 'bold 18px "Geist Mono", monospace';
+        ctx.fillStyle = barColor;
+        ctx.fillText(label, x + width / 2, y + height + 24);
+      }
+      ctx.restore();
+    }
+
+    // Dibuja flama luminosa realista con núcleo incandescente
+    function drawLuminousFlame(ctx, cx, cy, scale = 1.0) {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.scale(scale, scale);
+
+      // Resplandor radial de calor
+      const radG = ctx.createRadialGradient(0, 0, 5, 0, 0, 95);
+      radG.addColorStop(0, 'rgba(255, 184, 0, 0.45)');
+      radG.addColorStop(0.35, 'rgba(255, 100, 0, 0.22)');
+      radG.addColorStop(0.7, 'rgba(255, 60, 0, 0.08)');
+      radG.addColorStop(1, 'transparent');
+      ctx.fillStyle = radG;
+      ctx.beginPath();
+      ctx.arc(0, 0, 95, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Llama exterior
+      const flameOuter = ctx.createLinearGradient(0, 45, 0, -55);
+      flameOuter.addColorStop(0, '#E65100');
+      flameOuter.addColorStop(0.5, '#FF8F00');
+      flameOuter.addColorStop(1, '#FFD54F');
+      ctx.fillStyle = flameOuter;
+      ctx.beginPath();
+      ctx.moveTo(0, -55);
+      ctx.bezierCurveTo(16, -30, 36, -10, 36, 18);
+      ctx.bezierCurveTo(36, 40, 20, 46, 0, 46);
+      ctx.bezierCurveTo(-20, 46, -36, 40, -36, 18);
+      ctx.bezierCurveTo(-36, -10, -16, -30, 0, -55);
+      ctx.closePath();
+      ctx.fill();
+
+      // Llama intermedia
+      const flameMid = ctx.createLinearGradient(0, 40, 0, -38);
+      flameMid.addColorStop(0, '#FF8F00');
+      flameMid.addColorStop(0.5, '#FFC107');
+      flameMid.addColorStop(1, '#FFF9C4');
+      ctx.fillStyle = flameMid;
+      ctx.beginPath();
+      ctx.moveTo(0, -38);
+      ctx.bezierCurveTo(10, -20, 24, -4, 24, 16);
+      ctx.bezierCurveTo(24, 34, 12, 38, 0, 38);
+      ctx.bezierCurveTo(-12, 38, -24, 34, -24, 16);
+      ctx.bezierCurveTo(-24, -4, -10, -20, 0, -38);
+      ctx.closePath();
+      ctx.fill();
+
+      // Núcleo incandescente
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.moveTo(0, -18);
+      ctx.bezierCurveTo(6, -8, 12, 4, 12, 16);
+      ctx.bezierCurveTo(12, 28, 6, 30, 0, 30);
+      ctx.bezierCurveTo(-6, 30, -12, 28, -12, 16);
+      ctx.bezierCurveTo(-12, 4, -6, -8, 0, -18);
+      ctx.closePath();
+      ctx.fill();
+
+      // Chispas de la llama
+      ctx.fillStyle = '#FFE082';
+      [[-18, -42, 2], [14, -38, 2.5], [-8, -62, 1.8], [20, -52, 2], [-24, -18, 2], [22, -12, 2.2]].forEach(([sx, sy, r]) => {
+        ctx.beginPath();
+        ctx.arc(sx, sy, r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      ctx.restore();
+    }
+
+    // Dibuja silueta vectorial en alta definición del Cerro de la Silla
+    function drawCerroDeLaSilla(ctx, w, yBase, mountainColor, ridgeColor) {
+      ctx.save();
+      ctx.fillStyle = mountainColor;
+      ctx.beginPath();
+      ctx.moveTo(50, yBase + 120);
+      ctx.lineTo(140, yBase + 85);
+      ctx.lineTo(260, yBase + 45);
+      ctx.lineTo(370, yBase - 90);  // Pico Norte
+      ctx.lineTo(470, yBase - 10);  // Silla / Vaguada
+      ctx.lineTo(580, yBase + 15);
+      ctx.lineTo(720, yBase - 70);  // Pico Antena / Sur
+      ctx.lineTo(840, yBase + 35);
+      ctx.lineTo(950, yBase + 80);
+      ctx.lineTo(w - 50, yBase + 120);
+      ctx.lineTo(w - 50, yBase + 210);
+      ctx.lineTo(50, yBase + 210);
+      ctx.closePath();
+      ctx.fill();
+
+      // Línea de cresta luminosa
+      ctx.strokeStyle = ridgeColor;
+      ctx.lineWidth = 4;
+      ctx.shadowColor = ridgeColor;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.moveTo(50, yBase + 120);
+      ctx.lineTo(140, yBase + 85);
+      ctx.lineTo(260, yBase + 45);
+      ctx.lineTo(370, yBase - 90);
+      ctx.lineTo(470, yBase - 10);
+      ctx.lineTo(580, yBase + 15);
+      ctx.lineTo(720, yBase - 70);
+      ctx.lineTo(840, yBase + 35);
+      ctx.lineTo(950, yBase + 80);
+      ctx.lineTo(w - 50, yBase + 120);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // =========================================================================
+    // POSTER 1: STORY GENERAL DE ASADO (OBRA MAESTRA TÁCTICA & VIRAL)
+    // =========================================================================
+    function drawStoryGeneral(ctx, w, h) {
+      const total = document.getElementById('hud-total')?.textContent || '$0';
+      const porCabeza = document.getElementById('hud-por-cabeza')?.textContent || '$0';
+      const totalPax = state.pax.compadres + state.pax.comadres + state.pax.huercos;
+      const totalMeatKg = state.cuts.filter(c => c.active).reduce((sum, c) => sum + c.kg, 0);
+      const activeCuts = state.cuts.filter(c => c.active && c.kg > 0);
+      const cutsStr = activeCuts.map(c => c.name.split(' ')[0] + ' (' + c.kg + 'kg)').join(', ') || 'Arrachera y Aguja norteña';
+
+      // Paleta según el tema visual seleccionado
+      const palettes = {
+        oro: {
+          bgTop: '#100E08',
+          bgMid: '#090704',
+          bgBottom: '#030201',
+          primary: '#FFB800',
+          primaryGlow: 'rgba(255, 184, 0, 0.35)',
+          secondary: '#F59E0B',
+          accent: '#10B981',
+          cardBg: '#0E0B05',
+          cardBorder: 'rgba(255, 184, 0, 0.45)',
+          heroBorder: '#FFB800',
+          heroBg: 'rgba(255, 184, 0, 0.12)',
+          mountain: '#151007',
+          ridgeStroke: 'rgba(255, 184, 0, 0.75)',
+          contourStroke: 'rgba(255, 184, 0, 0.10)',
+          textPrimary: '#FFFFFF',
+          textMuted: '#94A3B8',
+          sparkColor: 'rgba(255, 184, 0, 0.85)'
+        },
+        brasa: {
+          bgTop: '#1F0B06',
+          bgMid: '#0E0402',
+          bgBottom: '#040101',
+          primary: '#FF5500',
+          primaryGlow: 'rgba(255, 85, 0, 0.38)',
+          secondary: '#FF8800',
+          accent: '#EF4444',
+          cardBg: '#130504',
+          cardBorder: 'rgba(255, 85, 0, 0.55)',
+          heroBorder: '#FF5500',
+          heroBg: 'rgba(255, 85, 0, 0.16)',
+          mountain: '#1F0B07',
+          ridgeStroke: 'rgba(255, 100, 0, 0.9)',
+          contourStroke: 'rgba(255, 85, 0, 0.12)',
+          textPrimary: '#FFFFFF',
+          textMuted: '#CBD5E1',
+          sparkColor: 'rgba(255, 85, 0, 0.95)'
+        },
+        stealth: {
+          bgTop: '#0D111A',
+          bgMid: '#07090F',
+          bgBottom: '#030406',
+          primary: '#38BDF8',
+          primaryGlow: 'rgba(56, 189, 248, 0.25)',
+          secondary: '#E2E8F0',
+          accent: '#10B981',
+          cardBg: '#070A10',
+          cardBorder: 'rgba(148, 163, 184, 0.35)',
+          heroBorder: '#38BDF8',
+          heroBg: 'rgba(56, 189, 248, 0.12)',
+          mountain: '#0E1420',
+          ridgeStroke: 'rgba(56, 189, 248, 0.65)',
+          contourStroke: 'rgba(56, 189, 248, 0.08)',
+          textPrimary: '#FFFFFF',
+          textMuted: '#94A3B8',
+          sparkColor: 'rgba(255, 255, 255, 0.75)'
+        }
+      };
+      const p = palettes[storyTheme] || palettes.oro;
+
+      // 1. Fondo Oscuro de Basalto & Atmósfera
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+      bgGrad.addColorStop(0, p.bgTop);
+      bgGrad.addColorStop(0.4, p.bgMid);
+      bgGrad.addColorStop(1, p.bgBottom);
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Resplandor cálido en el cenit
+      const glow = ctx.createRadialGradient(w / 2, 280, 20, w / 2, 280, 580);
+      glow.addColorStop(0, p.primaryGlow);
+      glow.addColorStop(0.6, 'rgba(255, 100, 0, 0.05)');
+      glow.addColorStop(1, 'transparent');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, w, h);
+
+      // 2. Curvas de Nivel Topográficas de Monterrey (Inspiración Image 2)
+      drawTopographicIsolines(ctx, w, h, p.contourStroke);
+
+      // 3. Chispas flotantes
+      drawEmberSparks(ctx, 20, p.sparkColor);
+
+      // 4. Silueta Vectorial del Cerro de la Silla
+      drawCerroDeLaSilla(ctx, w, 520, p.mountain, p.ridgeStroke);
+
+      // 5. Marco Táctico Exterior con Esquinas L
+      ctx.save();
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect(50, 60, w - 100, h - 120, 36);
+      ctx.stroke();
+      ctx.restore();
+
+      drawTacticalCorners(ctx, 50, 60, w - 100, h - 120, 28, p.primary);
+
+      // 6. HEADER TÁCTICO & COORDENADAS REGÍAS
+      ctx.textAlign = 'center';
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('—— MONTERREY · NUEVO LEÓN · 25.6866° N, 100.3161° W ——', w / 2, 125);
+
+      // 7. TÍTULO MONUMENTAL TWO-TONE (CERO TEXT CLIPPING)
+      // Línea 1: "¿SE VA A" en blanco hueso
+      ctx.save();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '900 76px Inter, sans-serif';
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+      ctx.shadowBlur = 16;
+      ctx.fillText('¿SE VA A', w / 2, 205);
+      ctx.restore();
+
+      // Línea 2: "HACER?" en dorado metalizado bruñido
+      ctx.save();
+      const goldGrad = ctx.createLinearGradient(w / 2 - 200, 220, w / 2 + 200, 310);
+      goldGrad.addColorStop(0, '#FFF2B2');
+      goldGrad.addColorStop(0.3, '#E5B842');
+      goldGrad.addColorStop(0.7, '#BD8B22');
+      goldGrad.addColorStop(1, '#F7D97B');
+      ctx.fillStyle = goldGrad;
+      ctx.font = '900 90px Inter, sans-serif';
+      ctx.shadowColor = p.primaryGlow;
+      ctx.shadowBlur = 24;
+      ctx.fillText('HACER?', w / 2, 295);
+      ctx.restore();
+
+      // Subtítulo oficial
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('— LA CALCULADORA TÁCTICA DE LA CARNITA ASADA —', w / 2, 345);
+
+      // 8. Llama Luminosa Central
+      drawLuminousFlame(ctx, w / 2, 415, 0.95);
+
+      // 9. Código de Barras Táctico con Código Regio Activado
+      drawTacticalBarcode(ctx, w / 2 - 210, 480, 420, 24, p.primary, '〈 CÓDIGO REGIO ACTIVADO 〉');
+
+      // 10. BENTO GRID TÁCTICA (4 BLOQUES LIMPIOS)
+      const bentoY = 560;
+      const bentoW = w - 170;
+      const colW = (bentoW - 20) / 2;
+      const col1X = 85;
+      const col2X = col1X + colW + 20;
+
+      // Caja 1: Contingente (Col 1, Fila 1)
+      ctx.save();
+      ctx.fillStyle = p.cardBg;
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(col1X, bentoY, colW, 135, 18);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.textAlign = 'left';
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('👥 CONTINGENTE REGIO', col1X + 22, bentoY + 38);
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = '900 30px Inter, sans-serif';
+      ctx.fillText(`${totalPax} PERSONAS`, col1X + 22, bentoY + 80);
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '600 18px Inter, sans-serif';
+      ctx.fillText(`${state.pax.compadres} comp · ${state.pax.comadres} comad · ${state.pax.huercos} huer`, col1X + 22, bentoY + 112);
+
+      // Caja 2: Proteína Total (Col 2, Fila 1)
+      ctx.save();
+      ctx.fillStyle = p.cardBg;
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(col2X, bentoY, colW, 135, 18);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('🥩 PROTEÍNA TOTAL', col2X + 22, bentoY + 38);
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = '900 30px Inter, sans-serif';
+      ctx.fillText(`${totalMeatKg.toFixed(1)} KG EN ASADOR`, col2X + 22, bentoY + 80);
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '600 18px Inter, sans-serif';
+      ctx.fillText(activeCuts[0] ? activeCuts[0].name.split(' ')[0] + ' + más cortes' : 'Cortes seleccionados', col2X + 22, bentoY + 112);
+
+      // Caja 3: Combustible & Mezquite (Col 1, Fila 2)
+      const bentoY2 = bentoY + 150;
+      ctx.save();
+      ctx.fillStyle = p.cardBg;
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(col1X, bentoY2, colW, 135, 18);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('🪵 BRASA & COMBUSTIBLE', col1X + 22, bentoY2 + 38);
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = '700 22px Inter, sans-serif';
+      ctx.fillText(document.getElementById('carbon-bags')?.textContent || 'Carbón mezquite', col1X + 22, bentoY2 + 80);
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '500 18px Inter, sans-serif';
+      ctx.fillText('Mezquite · Brasa blanca asegurada', col1X + 22, bentoY2 + 112);
+
+      // Caja 4: Hidratación (Col 2, Fila 2)
+      ctx.save();
+      ctx.fillStyle = p.cardBg;
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(col2X, bentoY2, colW, 135, 18);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('🍺 HIDRATACIÓN FRÍA', col2X + 22, bentoY2 + 38);
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = '700 22px Inter, sans-serif';
+      const drinksStr = (state.drinksMode === 'shared' ? (state.sixesManual * 6) + ' Cheves incluidas' : 'Cada quien sus frías (BYOB)');
+      ctx.fillText(drinksStr, col2X + 22, bentoY2 + 80);
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '500 18px Inter, sans-serif';
+      ctx.fillText('Hielera lista con sal en grano', col2X + 22, bentoY2 + 112);
+
+      // 11. CAJA DE IMPACTO SUPREMO: GRAN TOTAL & COPERACHA POR CABEZA
+      const box2X = 85, box2Y = 865, box2W = w - 170, box2H = 360;
+      ctx.save();
+      ctx.fillStyle = p.heroBg;
+      ctx.strokeStyle = p.heroBorder;
+      ctx.lineWidth = 3.5;
+      ctx.shadowColor = p.primary;
+      ctx.shadowBlur = 24;
+      ctx.beginPath();
+      ctx.roundRect(box2X, box2Y, box2W, box2H, 28);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = p.textMuted;
+      ctx.font = 'bold 22px "Geist Mono", monospace';
+      ctx.fillText('PRESUPUESTO TOTAL ESTIMADO', w / 2, box2Y + 55);
+
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = '900 84px "Geist Mono", monospace';
+      ctx.fillText(total + ' MXN', w / 2, box2Y + 150);
+
+      // Divisor dorado
+      ctx.strokeStyle = p.cardBorder;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(box2X + 60, box2Y + 190);
+      ctx.lineTo(box2X + box2W - 60, box2Y + 190);
+      ctx.stroke();
+
+      // Coperacha Gigante
+      ctx.fillStyle = p.primary;
+      ctx.font = '900 48px Inter, sans-serif';
+      ctx.fillText(`👉 COPERACHA: ${porCabeza} POR CABEZA`, w / 2, box2Y + 265);
+
+      ctx.fillStyle = p.textPrimary;
+      ctx.font = 'italic 23px Inter, sans-serif';
+      ctx.fillText('«Paga tu parte compadre, no seas codo»', w / 2, box2Y + 315);
+
+      // 12. STICKER INTERACTIVO VIRAL (POLL BOX PARA STORIES INSTAGRAM & WHATSAPP)
+      const pollBoxY = 1245;
+      const pollBoxW = w - 170;
+      ctx.save();
+      ctx.fillStyle = '#06080D';
+      ctx.strokeStyle = p.primary;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.roundRect(85, pollBoxY, pollBoxW, 185, 24);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 22px "Geist Mono", monospace';
+      ctx.fillText('🗳️ RESPONDE ESTA HISTORIA: ¿JALAS O TE FRESEAS?', w / 2, pollBoxY + 45);
+
+      // Botón 1 (Jalo)
+      ctx.save();
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.25)';
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.roundRect(120, pollBoxY + 68, 400, 68, 16);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#34D399';
+      ctx.font = '900 28px Inter, sans-serif';
+      ctx.fillText('🟢 JALO CON TODO 🥩', 320, pollBoxY + 112);
+
+      // Botón 2 (Me freseo)
+      ctx.save();
+      ctx.fillStyle = '#1A2233';
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(560, pollBoxY + 68, 400, 68, 16);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '900 28px Inter, sans-serif';
+      ctx.fillText('⚪ ME FRESEO 🥱', 760, pollBoxY + 112);
+
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '600 19px Inter, sans-serif';
+      ctx.fillText('📲 Responde para apartar tu lugar o mandar transferencia', w / 2, pollBoxY + 162);
+
+      // 13. PUNCHLINE & LEY REGIA
+      ctx.fillStyle = p.primary;
+      ctx.font = 'italic bold 26px Inter, sans-serif';
+      ctx.fillText('⚠️ «El que llegue tarde le toca lavar la parrilla y recoger el mugrero.»', w / 2, 1475);
+
+      ctx.fillStyle = p.textMuted;
+      ctx.font = '600 21px "Geist Mono", monospace';
+      ctx.fillText('Veredicto del Suegro: APROBADO CON HONORES ⭐⭐⭐⭐⭐', w / 2, 1520);
+
+      // 14. ENTRADA AL CENTRO DE MANDO & WEBSITE EDITORIAL
+      ctx.fillStyle = p.primary;
+      ctx.font = 'bold 18px "Geist Mono", monospace';
+      ctx.fillText('ENTRA AL CENTRO DE MANDO', w / 2, 1580);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '900 32px "Geist Mono", monospace';
+      ctx.fillText('regioprecavido.com', w / 2, 1625);
+
+      // 15. EMBLEMA Y FIRMA MINIMALISTA REQUERIDA (By. ULS LLC.)
+      ctx.save();
+      ctx.strokeStyle = p.primary;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(w / 2 - 35, 1680);
+      ctx.lineTo(w / 2, 1695);
+      ctx.lineTo(w / 2 + 35, 1680);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#64748B';
+      ctx.font = 'bold 22px "Geist Mono", monospace';
+      ctx.fillText('BETA v1.0 · By. ULS LLC.', w / 2, 1735);
+    }
+
+    // =========================================================================
+    // POSTER 2: STORY DE MANDAMIENTO REGIO (TARJETA COLECCIONABLE & VIRAL)
+    // =========================================================================
+    function drawMandamientoStory(ctx, w, h) {
+      if (!activeMandamiento) return;
+
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+      bgGrad.addColorStop(0, '#0D111A');
+      bgGrad.addColorStop(0.5, '#07090F');
+      bgGrad.addColorStop(1, '#030406');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Curvas de nivel topográficas
+      drawTopographicIsolines(ctx, w, h, 'rgba(255, 184, 0, 0.08)');
+
+      // Chispas
+      drawEmberSparks(ctx, 16, 'rgba(255, 184, 0, 0.75)');
+
+      // Silueta Cerro de fondo
+      drawCerroDeLaSilla(ctx, w, 580, '#0E1420', 'rgba(255, 184, 0, 0.45)');
+
+      // Marca de agua monumental del número de mandamiento
+      ctx.save();
+      ctx.fillStyle = 'rgba(255, 184, 0, 0.04)';
+      ctx.textAlign = 'center';
+      ctx.font = '900 320px "Geist Mono", monospace';
+      ctx.fillText(String(activeMandamiento.id), w / 2, 920);
+      ctx.restore();
+
+      // Marco Dorado Táctico
+      ctx.strokeStyle = 'rgba(255, 184, 0, 0.55)';
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.roundRect(50, 60, w - 100, h - 120, 36);
+      ctx.stroke();
+
+      drawTacticalCorners(ctx, 50, 60, w - 100, h - 120, 28, '#FFB800');
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#FFB800';
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('—— MONTERREY · CÓDIGO DE HONOR DE NUEVO LEÓN ——', w / 2, 125);
+
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '600 24px Inter, sans-serif';
+      ctx.fillText('LA LEY SAGRADA DEL ASADOR', w / 2, 175);
+
+      // Número
+      ctx.fillStyle = '#FFB800';
+      ctx.font = '900 76px "Geist Mono", monospace';
+      ctx.fillText(`MANDAMIENTO #${activeMandamiento.id}`, w / 2, 280);
+
+      // Código de barras táctico
+      drawTacticalBarcode(ctx, w / 2 - 200, 315, 400, 22, '#FFB800', `〈 MANDAMIENTO #${activeMandamiento.id} CERTIFICADO 〉`);
+
+      // Título con auto-wrap y tamaño dinámico
+      ctx.fillStyle = '#FFFFFF';
+      let titleFontSize = 54;
+      ctx.font = `900 ${titleFontSize}px Inter, sans-serif`;
+      let titleLines = wrapText(ctx, activeMandamiento.title.toUpperCase(), w - 240);
+      if (titleLines.length > 2) {
+        titleFontSize = 44;
+        ctx.font = `900 ${titleFontSize}px Inter, sans-serif`;
+        titleLines = wrapText(ctx, activeMandamiento.title.toUpperCase(), w - 240);
+      }
+      let ty = 460;
+      titleLines.forEach(l => {
+        ctx.fillText(l, w / 2, ty);
+        ty += titleFontSize + 16;
+      });
+
+      // Caja descriptiva
+      const descBoxY = ty + 30;
+      const descLines = wrapText(ctx, activeMandamiento.desc, w - 280);
+      const descBoxH = Math.max(220, (descLines.length * 50) + 110);
+
+      ctx.save();
+      ctx.fillStyle = '#080B12';
+      ctx.strokeStyle = 'rgba(255, 184, 0, 0.45)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect(100, descBoxY, w - 200, descBoxH, 26);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#E2E8F0';
+      ctx.font = '500 32px Inter, sans-serif';
+      let dLineY = descBoxY + 75;
+      descLines.forEach(dl => {
+        ctx.fillText(dl, w / 2, dLineY);
+        dLineY += 50;
+      });
+
+      // Penalización
+      ctx.fillStyle = '#FDE047';
+      ctx.font = 'italic bold 24px Inter, sans-serif';
+      ctx.fillText('⚠️ PENALIZACIÓN: Retiro de mandil y te mandan por los refrescos.', w / 2, descBoxY + descBoxH - 32);
+
+      // GANCHO VIRAL: Etiqueta al compadre
+      const ctaY = descBoxY + descBoxH + 55;
+      ctx.save();
+      ctx.fillStyle = 'rgba(255, 184, 0, 0.12)';
+      ctx.strokeStyle = '#FFB800';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.roundRect(110, ctaY, w - 220, 95, 20);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#FFB800';
+      ctx.font = '900 26px Inter, sans-serif';
+      ctx.fillText('👉 Etiqueta al compadre que siempre la caga con esto', w / 2, ctaY + 58);
+
+      // ENTRADA AL CENTRO DE MANDO & WEBSITE
+      ctx.fillStyle = '#FFB800';
+      ctx.font = 'bold 18px "Geist Mono", monospace';
+      ctx.fillText('ENTRA AL CENTRO DE MANDO', w / 2, 1580);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '900 32px "Geist Mono", monospace';
+      ctx.fillText('regioprecavido.com', w / 2, 1625);
+
+      // FIRMA MINIMALISTA REQUERIDA (By. ULS LLC.)
+      ctx.fillStyle = '#64748B';
+      ctx.font = 'bold 22px "Geist Mono", monospace';
+      ctx.fillText('BETA v1.0 · By. ULS LLC.', w / 2, 1735);
+    }
+
+    // =========================================================================
+    // POSTER 3: STORY DE PROTOCOLO DE FUEGO (BLUEPRINT MAESTRO DE BRASA)
+    // =========================================================================
+    function drawFireStory(ctx, w, h) {
+      if (!activeFireStory) return;
+
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
+      bgGrad.addColorStop(0, '#140A06');
+      bgGrad.addColorStop(0.5, '#080504');
+      bgGrad.addColorStop(1, '#030201');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Curvas de nivel topográficas
+      drawTopographicIsolines(ctx, w, h, 'rgba(255, 85, 0, 0.10)');
+
+      // Chispas
+      drawEmberSparks(ctx, 20, 'rgba(255, 85, 0, 0.85)');
+
+      // Marco exterior
+      ctx.strokeStyle = 'rgba(255, 85, 0, 0.55)';
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.roundRect(50, 60, w - 100, h - 120, 36);
+      ctx.stroke();
+
+      drawTacticalCorners(ctx, 50, 60, w - 100, h - 120, 28, '#FF5500');
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#FF5500';
+      ctx.font = 'bold 20px "Geist Mono", monospace';
+      ctx.fillText('—— MONTERREY · PROTOCOLO DE BRASA REGIA ——', w / 2, 125);
+
+      // Flama luminosa
+      drawLuminousFlame(ctx, w / 2, 200, 0.9);
+
+      // Título
+      ctx.fillStyle = '#FFFFFF';
+      let fTitleSize = 48;
+      ctx.font = `900 ${fTitleSize}px Inter, sans-serif`;
+      const titleLines = wrapText(ctx, activeFireStory.title.toUpperCase(), w - 220);
+      let fty = 290;
+      titleLines.forEach(tl => {
+        ctx.fillText(tl, w / 2, fty);
+        fty += fTitleSize + 14;
+      });
+
+      ctx.fillStyle = '#CBD5E1';
+      ctx.font = '600 24px Inter, sans-serif';
+      ctx.fillText(activeFireStory.subtitle, w / 2, fty + 15);
+
+      // Barcode
+      drawTacticalBarcode(ctx, w / 2 - 200, fty + 35, 400, 20, '#FF5500', `〈 NIVEL ${activeFireStory.id} HOMOLOGADO 〉`);
+
+      // Caja de pasos operativos
+      const stepsBoxY = fty + 95;
+      const stepsBoxW = w - 200;
+      const stepsBoxH = 680;
+
+      ctx.save();
+      ctx.fillStyle = '#080504';
+      ctx.strokeStyle = 'rgba(255, 85, 0, 0.45)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect(100, stepsBoxY, stepsBoxW, stepsBoxH, 26);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.textAlign = 'left';
+      let stepY = stepsBoxY + 55;
+      activeFireStory.steps.forEach((st, idx) => {
+        ctx.fillStyle = '#FF5500';
+        ctx.font = 'bold 24px "Geist Mono", monospace';
+        ctx.fillText(`PASO ${idx + 1}:`, 140, stepY);
+
+        ctx.fillStyle = '#E2E8F0';
+        ctx.font = '500 24px Inter, sans-serif';
+        const stLines = wrapText(ctx, st, stepsBoxW - 80);
+        let sLineY = stepY + 34;
+        stLines.forEach(sl => {
+          ctx.fillText(sl, 140, sLineY);
+          sLineY += 34;
+        });
+        stepY = sLineY + 18;
+      });
+
+      // Veredicto del Suegro
+      ctx.textAlign = 'center';
+      const veredY = stepsBoxY + stepsBoxH + 40;
+      ctx.fillStyle = '#FDE047';
+      ctx.font = 'italic bold 28px Inter, sans-serif';
+      const vLines = wrapText(ctx, activeFireStory.veredicto, w - 220);
+      let vy = veredY;
+      vLines.forEach(vl => {
+        ctx.fillText(vl, w / 2, vy);
+        vy += 40;
+      });
+
+      // GANCHO VIRAL: Pásaselo al del alcohol
+      const ctaY = vy + 20;
+      ctx.save();
+      ctx.fillStyle = 'rgba(255, 85, 0, 0.15)';
+      ctx.strokeStyle = '#FF5500';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.roundRect(110, ctaY, w - 220, 90, 20);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#FF8800';
+      ctx.font = '900 25px Inter, sans-serif';
+      ctx.fillText('👉 Pásaselo al que todavía prende carbón con alcohol 💀', w / 2, ctaY + 54);
+
+      // ENTRADA AL CENTRO DE MANDO & WEBSITE
+      ctx.fillStyle = '#FF5500';
+      ctx.font = 'bold 18px "Geist Mono", monospace';
+      ctx.fillText('ENTRA AL CENTRO DE MANDO', w / 2, 1580);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '900 32px "Geist Mono", monospace';
+      ctx.fillText('regioprecavido.com', w / 2, 1625);
+
+      // FIRMA MINIMALISTA REQUERIDA (By. ULS LLC.)
+      ctx.fillStyle = '#64748B';
+      ctx.font = 'bold 22px "Geist Mono", monospace';
+      ctx.fillText('BETA v1.0 · By. ULS LLC.', w / 2, 1735);
+    }
+
+    function descargarStoryGeneralPng() {
+      descargarCanvasDirecto(drawStoryGeneral, 'carnita_asada_story.png');
+    }
+
+    function compartirStoryGeneral() {
+      compartirCanvasNativo(drawStoryGeneral, 'carnita_asada_story.png', '¿Se va a hacer la carnita asada?', 'Presupuesto y coperacha por cabeza');
+    }
+
+    function descargarMandamientoPng() {
+      if (!activeMandamiento) return;
+      descargarCanvasDirecto(drawMandamientoStory, 'mandamiento_' + activeMandamiento.id + '.png');
+    }
+
+    function compartirMandamientoStory() {
+      if (!activeMandamiento) return;
+      compartirCanvasNativo(drawMandamientoStory, 'mandamiento_' + activeMandamiento.id + '.png', 'Mandamiento #' + activeMandamiento.id, activeMandamiento.title);
+    }
+
+    function descargarFireStoryPng() {
+      if (!activeFireStory) return;
+      descargarCanvasDirecto(drawFireStory, 'metodo_fuego_' + activeFireStory.id + '.png');
+    }
+
+    function compartirFireStory() {
+      if (!activeFireStory) return;
+      compartirCanvasNativo(drawFireStory, 'metodo_fuego_' + activeFireStory.id + '.png', activeFireStory.title, activeFireStory.subtitle);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const textEl = document.getElementById('toast-text');
+      if (textEl) textEl.textContent = msg;
+      if (toast) {
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3000);
+      }
+    }
+
+    // Expose all functions to global window object
+    window.toggleWeatherState = toggleWeatherState;
+    window.toggleSoundFx = toggleSoundFx;
+    window.openMandamientosModal = openMandamientosModal;
+    window.closeMandamientosModal = closeMandamientosModal;
+    window.reiniciarDesdeCero = reiniciarDesdeCero;
+    window.switchTab = switchTab;
+    window.adjustPax = adjustPax;
+    window.setMarketTier = setMarketTier;
+    window.applyPreset = applyPreset;
+    window.updateHunger = updateHunger;
+    window.adjustCarbon = adjustCarbon;
+    window.setDrinksMode = setDrinksMode;
+    window.adjustSixes = adjustSixes;
+    window.toggleRefrescosActive = toggleRefrescosActive;
+    window.adjustRefrescos = adjustRefrescos;
+    window.copiarRecadoWhatsApp = copiarRecadoWhatsApp;
+    window.setStoryTheme = setStoryTheme;
+    window.openStoriesModal = openStoriesModal;
+    window.closeStoriesModal = closeStoriesModal;
+    window.selectFireLevel = selectFireLevel;
+    window.toggleTimer = toggleTimer;
+    window.openFireStoryModal = openFireStoryModal;
+    window.closeFireStoryModal = closeFireStoryModal;
+    window.openSingleMandamientoStory = openSingleMandamientoStory;
+    window.closeMandamientoStoryModal = closeMandamientoStoryModal;
+    window.descargarStoryGeneralPng = descargarStoryGeneralPng;
+    window.compartirStoryGeneral = compartirStoryGeneral;
+    window.descargarMandamientoPng = descargarMandamientoPng;
+    window.compartirMandamientoStory = compartirMandamientoStory;
+    window.descargarFireStoryPng = descargarFireStoryPng;
+    window.compartirFireStory = compartirFireStory;
+    window.toggleCut = toggleCut;
+    window.adjustCutKg = adjustCutKg;
+    window.toggleBotana = toggleBotana;
+    window.adjustBotanaCount = adjustBotanaCount;
+    window.copiarMandamientoTexto = copiarMandamientoTexto;
+    window.copiarFireStoryTexto = copiarFireStoryTexto;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      selectFireLevel(2);
+      applyPreset('banqueta');
+      renderAll();
+    });
+  </script>
+</body>
+</html>
