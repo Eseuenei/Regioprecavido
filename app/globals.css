@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0b0b0a;
+  --color-surface: #161512;
+  --color-foreground: #ece8df;
+  --color-muted: #8f887a;
+  --color-gold: #c9a24a;
+  --color-gold-bright: #e6c26a;
+  --color-border: #2a2720;
+  --font-display: var(--font-anton);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.92);
+}
